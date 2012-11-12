@@ -1,0 +1,26 @@
+File;Line;Rule;Description
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;1;use;"use" clause
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;2;use;"use" clause
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;11;arraytyp;Array type
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;35;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;51;parinit;Parameter default value
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;52;parinit;Parameter default value
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;54;lvarinit;Local variable initialization
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;54;varinit;Variable initialization
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;57;retinit;Return value initialization
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;82;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;102;exprlevel;Level of complexity of expression
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;119;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;121;exprlevel;Level of complexity of expression
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;176;typacs;Access types
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;177;arraytyp;Array type
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;181;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;182;typacs;Access types
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;185;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;192;exprlevel;Level of complexity of expression
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;232;loopname;Named loops
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.ads;13;parinit;Parameter default value
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.ads;14;parinit;Parameter default value
+D:\Aravindan\projet_exemples\OneArmedBandit\slotmachine.adb;1;use;"use" clause
+D:\Aravindan\projet_exemples\OneArmedBandit\slotmachine.adb;2;use;"use" clause
+D:\Aravindan\projet_exemples\OneArmedBandit\slotmachine.adb;8;loopname;Named loops

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tusar:tusar xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:measures="http://www.thalesgroup.com/tusar/measures/v3"
+             xmlns:tusar="http://www.thalesgroup.com/tusar/v3">
+<tusar:measures>
+<measures:resource type="FILE" value="examples\A_test.pl">
+<measures:measure key="LOC" value="64" />
+<measures:measure key="NCLOC" value="47" />
+<measures:measure key="INSTRUCTIONS" value="44" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="6" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\code_with_huge_words.c">
+<measures:measure key="LOC" value="31" />
+<measures:measure key="NCLOC" value="12" />
+<measures:measure key="INSTRUCTIONS" value="6" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="12" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\databasedump.sql">
+<measures:measure key="LOC" value="658" />
+<measures:measure key="NCLOC" value="557" />
+<measures:measure key="INSTRUCTIONS" value="25" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="58" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\DOMUtils.java">
+<measures:measure key="LOC" value="294" />
+<measures:measure key="NCLOC" value="140" />
+<measures:measure key="INSTRUCTIONS" value="59" />
+<measures:measure key="COMMENTS" value="1" />
+<measures:measure key="MIXED" value="132" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\egalis.c">
+<measures:measure key="LOC" value="980" />
+<measures:measure key="NCLOC" value="654" />
+<measures:measure key="INSTRUCTIONS" value="310" />
+<measures:measure key="COMMENTS" value="50" />
+<measures:measure key="MIXED" value="189" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\fonction.c">
+<measures:measure key="LOC" value="476" />
+<measures:measure key="NCLOC" value="169" />
+<measures:measure key="INSTRUCTIONS" value="48" />
+<measures:measure key="COMMENTS" value="16" />
+<measures:measure key="MIXED" value="218" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\jquery.js">
+<measures:measure key="LOC" value="6078" />
+<measures:measure key="NCLOC" value="4355" />
+<measures:measure key="INSTRUCTIONS" value="1648" />
+<measures:measure key="COMMENTS" value="14" />
+<measures:measure key="MIXED" value="668" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\lim.c">
+<measures:measure key="LOC" value="11" />
+<measures:measure key="NCLOC" value="10" />
+<measures:measure key="INSTRUCTIONS" value="6" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="0" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/egalis.c">
+<measures:measure key="LOC" value="980" />
+<measures:measure key="NCLOC" value="654" />
+<measures:measure key="INSTRUCTIONS" value="310" />
+<measures:measure key="COMMENTS" value="50" />
+<measures:measure key="MIXED" value="189" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/DOMUtils.java">
+<measures:measure key="LOC" value="294" />
+<measures:measure key="NCLOC" value="140" />
+<measures:measure key="INSTRUCTIONS" value="59" />
+<measures:measure key="COMMENTS" value="1" />
+<measures:measure key="MIXED" value="132" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/fonction.c">
+<measures:measure key="LOC" value="476" />
+<measures:measure key="NCLOC" value="168" />
+<measures:measure key="INSTRUCTIONS" value="48" />
+<measures:measure key="COMMENTS" value="15" />
+<measures:measure key="MIXED" value="219" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/lim.c">
+<measures:measure key="LOC" value="11" />
+<measures:measure key="NCLOC" value="10" />
+<measures:measure key="INSTRUCTIONS" value="6" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="0" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/DOMUtils.java">
+<measures:measure key="LOC" value="294" />
+<measures:measure key="NCLOC" value="139" />
+<measures:measure key="INSTRUCTIONS" value="59" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="133" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/nest/nest/lim11.c">
+<measures:measure key="LOC" value="11" />
+<measures:measure key="NCLOC" value="10" />
+<measures:measure key="INSTRUCTIONS" value="6" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="0" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/nest space/a slcnt.c">
+<measures:measure key="LOC" value="2736" />
+<measures:measure key="NCLOC" value="1689" />
+<measures:measure key="INSTRUCTIONS" value="684" />
+<measures:measure key="COMMENTS" value="278" />
+<measures:measure key="MIXED" value="893" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/Program.cs">
+<measures:measure key="LOC" value="257" />
+<measures:measure key="NCLOC" value="205" />
+<measures:measure key="INSTRUCTIONS" value="108" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="19" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/jquery.js">
+<measures:measure key="LOC" value="6078" />
+<measures:measure key="NCLOC" value="4354" />
+<measures:measure key="INSTRUCTIONS" value="1648" />
+<measures:measure key="COMMENTS" value="12" />
+<measures:measure key="MIXED" value="669" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/databasedump.sql">
+<measures:measure key="LOC" value="658" />
+<measures:measure key="NCLOC" value="557" />
+<measures:measure key="INSTRUCTIONS" value="25" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="58" />
+</measures:resource>
+<measures:resource type="FILE" value="examples/query.py">
+<measures:measure key="LOC" value="1479" />
+<measures:measure key="NCLOC" value="1157" />
+<measures:measure key="INSTRUCTIONS" value="1157" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="144" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\Program.cs">
+<measures:measure key="LOC" value="257" />
+<measures:measure key="NCLOC" value="205" />
+<measures:measure key="INSTRUCTIONS" value="108" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="19" />
+</measures:resource>
+<measures:resource type="FILE" value="examples\query.py">
+<measures:measure key="LOC" value="1479" />
+<measures:measure key="NCLOC" value="1157" />
+<measures:measure key="INSTRUCTIONS" value="1157" />
+<measures:measure key="COMMENTS" value="0" />
+<measures:measure key="MIXED" value="144" />
+</measures:resource>
+</tusar:measures>
+</tusar:tusar>

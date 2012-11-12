@@ -1,0 +1,4 @@
+File;Module;MAINTAINABILITY;ANALYZABILITYm;CHANGEABILITYm;STABILITYm;TESTABILITYm;md_comf;md_dcl;md_fanout;md_n2;md_line;md_excs;md_stat;md_expfn;md_types;md_vars;md_with
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb;.\..\..\projet_exemples\OneArmedBandit\onearmedbandit.adb;GOOD;EXCELLENT;GOOD;EXCELLENT;EXCELLENT;0.31;14;0;2;259;0;93;0;2;12;2
+D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.ads;.\..\..\projet_exemples\OneArmedBandit\onearmedbandit.ads;GOOD;GOOD;EXCELLENT;EXCELLENT;EXCELLENT;0.00;6;6;36;25;0;0;9;4;0;0
+D:\Aravindan\projet_exemples\OneArmedBandit\slotmachine.adb;.\..\..\projet_exemples\OneArmedBandit\slotmachine.adb;GOOD;GOOD;EXCELLENT;EXCELLENT;EXCELLENT;0.00;2;0;11;16;0;7;0;0;2;2

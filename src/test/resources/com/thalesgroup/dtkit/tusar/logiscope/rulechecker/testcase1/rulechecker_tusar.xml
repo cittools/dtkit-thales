@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tusar:tusar xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:violations="http://www.thalesgroup.com/tusar/violations/v2"
+             xmlns:tusar="http://www.thalesgroup.com/tusar/v2">
+  <tusar:violations>
+      <violations:file path=".\..\..\GEN\SRC\MIS_Commande_Com.cpp">
+         <violations:violation line="91" key="incltype" message="problem with MIS_Commande.hpp"/>
+         <violations:violation line="108" key="cmdef" message="problem with MIS_Commande_Replique"/>
+         <violations:violation line="108" key="constrcpy" message="problem with MIS_Commande_Replique"/>
+         <violations:violation line="108" key="destr" message="problem with MIS_Commande_Replique"/>
+         <violations:violation line="108" key="nostruct" message="problem with MIS_Commande_Replique"/>
+         <violations:violation line="108" key="operass" message="problem with MIS_Commande_Replique"/>
+         <violations:violation line="109" key="ansi" message="problem with MIS_Commande_Replique ()"/>
+         <violations:violation line="109" key="inldef" message="problem with MIS_Commande_Replique ()"/>
+         <violations:violation line="117" key="globinit"
+                    message="problem with MIS_Commande_laCommande_replique_C5"/>
+         <violations:violation line="118" key="globinit"
+                    message="problem with MIS_Commande_laCommande_replique_C4"/>
+         <violations:violation line="119" key="globinit"
+                    message="problem with MIS_Commande_laCommande_replique_C1"/>
+         <violations:violation line="154" key="parammode" message="problem with p_tacheCourante"/>
+         <violations:violation line="154" key="sglreturn" message="problem with switchLaCommande (IdTache)"/>
+         <violations:violation line="201" key="cmclass" message="problem with initialiserInstances"/>
+         <violations:violation line="234" key="cmclass" message="problem with initialiserReplique"/>
+         <violations:violation line="234" key="parammode" message="problem with p_repliqueDest"/>
+         <violations:violation line="235" key="parammode" message="problem with p_repliqueSrc"/>
+         <violations:violation line="236" key="parammode" message="problem with p_tacheAInitialiser"/>
+         <violations:violation line="250" key="cmclass" message="problem with initialiserLesRepliques"/>
+         <violations:violation line="270" key="cmclass" message="problem with abonnerObjetsActifs"/>
+         <violations:violation line="305" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeDdeLectureRc.initialiser"/>
+         <violations:violation line="307" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeDdeEffacementDonnees.initialiser"/>
+         <violations:violation line="309" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeMiseEnSecuriteME.initialiser"/>
+         <violations:violation line="310" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtCdeMiseEnSecuriteME.initialiser"/>
+         <violations:violation line="312" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeMiseHorsSecuriteME.initialiser"/>
+         <violations:violation line="313" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtCdeMiseHorsSecuriteME.initialiser"/>
+         <violations:violation line="315" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeIdentCharge1.initialiser"/>
+         <violations:violation line="317" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeIdentCharge2.initialiser"/>
+         <violations:violation line="319" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeIdentCharge3.initialiser"/>
+         <violations:violation line="321" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtCdeIdentCharge4.initialiser"/>
+         <violations:violation line="323" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtRTIDeltaMdfBiea.initialiser"/>
+         <violations:violation line="324" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtRTIDeltaMdfBiea.initialiser"/>
+         <violations:violation line="325" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtRTIDeltaMdfBiea.initialiser"/>
+         <violations:violation line="326" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C1.evtRTIDeltaMdfBiea.initialiser"/>
+         <violations:violation line="328" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtRTIDeltaEtatDdePreparationCharge1.initi..."/>
+         <violations:violation line="329" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtRTIDeltaEtatDdePreparationCharge1.initi..."/>
+         <violations:violation line="331" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtRTIDeltaEtatDdeAlim115vCharge1.initiali..."/>
+         <violations:violation line="332" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtRTIDeltaEtatDdeAlim115vCharge1.initiali..."/>
+         <violations:violation line="334" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.evtRTIDeltaEtatDdeAlim28vCharge1.initialiser"/>
+         <violations:violation line="335" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C5.evtRTIDeltaEtatDdeAlim28vCharge1.initialiser"/>
+         <violations:violation line="344" key="classuse"
+                    message="problem with MIS_Commande_laCommande_replique_C4.drapMessageValide_.initialiser"/>
+         <violations:violation line="352" key="cmclass" message="problem with initialiserCommunications"/>
+      </violations:file>
+      <violations:file path=".\..\..\GEN\SRC\MIS_Configuration_Com.cpp">
+         <violations:violation line="91" key="incltype" message="problem with MIS_Configuration.hpp"/>
+         <violations:violation line="108" key="cmdef" message="problem with MIS_Configuration_Replique"/>
+         <violations:violation line="108" key="constrcpy" message="problem with MIS_Configuration_Replique"/>
+         <violations:violation line="108" key="destr" message="problem with MIS_Configuration_Replique"/>
+         <violations:violation line="108" key="nostruct" message="problem with MIS_Configuration_Replique"/>
+         <violations:violation line="108" key="operass" message="problem with MIS_Configuration_Replique"/>
+         <violations:violation line="109" key="ansi" message="problem with MIS_Configuration_Replique ()"/>
+         <violations:violation line="109" key="inldef" message="problem with MIS_Configuration_Replique ()"/>
+         <violations:violation line="117" key="globinit"
+                    message="problem with MIS_Configuration_laConfiguration_replique_C4"/>
+         <violations:violation line="118" key="globinit"
+                    message="problem with MIS_Configuration_laConfiguration_replique_C1"/>
+         <violations:violation line="134" key="parse"
+                    message="problem with &amp;MIS_Configuration_laConfiguration_replique_C1"/>
+         <violations:violation line="136" key="parse"
+                    message="problem with &amp;MIS_Configuration_laConfiguration_replique_C4"/>
+         <violations:violation line="139" key="parse" message="problem with 0,"/>
+         <violations:violation line="141" key="parse"
+                    message="problem with &amp;MIS_Configuration_laConfiguration_replique_INIT,"/>
+         <violations:violation line="157" key="parammode" message="problem with p_tacheCourante"/>
+         <violations:violation line="157" key="sglreturn"
+                    message="problem with switchLaConfiguration (IdTache)"/>
+         <violations:violation line="204" key="cmclass" message="problem with initialiserInstances"/>
+         <violations:violation line="222" key="cmclass" message="problem with initialiserReplique"/>
+         <violations:violation line="222" key="parammode" message="problem with p_repliqueDest"/>
+         <violations:violation line="223" key="parammode" message="problem with p_repliqueSrc"/>
+         <violations:violation line="224" key="parammode" message="problem with p_tacheAInitialiser"/>
+         <violations:violation line="238" key="cmclass" message="problem with initialiserLesRepliques"/>
+         <violations:violation line="257" key="cmclass" message="problem with abonnerObjetsActifs"/>
+         <violations:violation line="270" key="classuse"
+                    message="problem with MIS_Configuration_laConfiguration_replique_C4.evtFinForcageMsgSurv_.initialiser"/>
+         <violations:violation line="279" key="classuse"
+                    message="problem with MIS_Configuration_laConfiguration_replique_C4.drapMessageValide_.initialiser"/>
+         <violations:violation line="287" key="cmclass" message="problem with initialiserCommunications"/>
+      </violations:file>
+      <violations:file path=".\..\..\GEN\SRC\MIS_ElaborationMessagesSna_Com.cpp">
+         <violations:violation line="91" key="incltype" message="problem with MIS_ElaborationMessagesSna.hpp"/>
+         <violations:violation line="108" key="cmdef"
+                    message="problem with MIS_ElaborationMessagesSna_Replique"/>
+         <violations:violation line="108" key="constrcpy"
+                    message="problem with MIS_ElaborationMessagesSna_Replique"/>
+         <violations:violation line="108" key="destr"
+                    message="problem with MIS_ElaborationMessagesSna_Replique"/>
+         <violations:violation line="108" key="nostruct"
+                    message="problem with MIS_ElaborationMessagesSna_Replique"/>
+         <violations:violation line="108" key="operass"
+                    message="problem with MIS_ElaborationMessagesSna_Replique"/>
+         <violations:violation line="109" key="ansi"
+                    message="problem with MIS_ElaborationMessagesSna_Replique ()"/>
+         <violations:violation line="109" key="inldef"
+                    message="problem with MIS_ElaborationMessagesSna_Replique ()"/>
+         <violations:violation line="117" key="globinit"
+                    message="problem with MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C4"/>
+         <violations:violation line="118" key="globinit"
+                    message="problem with MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C1"/>
+         <violations:violation line="134" key="parse"
+                    message="problem with &amp;MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C1"/>
+         <violations:violation line="136" key="parse"
+                    message="problem with &amp;MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C4"/>
+         <violations:violation line="139" key="parse" message="problem with 0,"/>
+         <violations:violation line="141" key="parse"
+                    message="problem with &amp;MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_INIT,"/>
+         <violations:violation line="157" key="parammode" message="problem with p_tacheCourante"/>
+         <violations:violation line="157" key="sglreturn"
+                    message="problem with switchLaElaborationMessagesSna (IdTache)"/>
+         <violations:violation line="204" key="cmclass" message="problem with initialiserInstances"/>
+         <violations:violation line="222" key="cmclass" message="problem with initialiserReplique"/>
+         <violations:violation line="222" key="parammode" message="problem with p_repliqueDest"/>
+         <violations:violation line="223" key="parammode" message="problem with p_repliqueSrc"/>
+         <violations:violation line="224" key="parammode" message="problem with p_tacheAInitialiser"/>
+         <violations:violation line="238" key="cmclass" message="problem with initialiserLesRepliques"/>
+         <violations:violation line="257" key="cmclass" message="problem with abonnerObjetsActifs"/>
+         <violations:violation line="269" key="classuse"
+                    message="problem with MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C4.tempoInitEnCou..."/>
+         <violations:violation line="271" key="classuse"
+                    message="problem with MIS_ElaborationMessagesSna_laElaborationMessagesSna_replique_C4.tempoSortieCou..."/>
+         <violations:violation line="283" key="cmclass" message="problem with initialiserCommunications"/>
+      </violations:file>
+      <violations:file path=".\..\..\GEN\SRC\MIS_Mcs_Com.cpp">
+         <violations:violation line="91" key="incltype" message="problem with MIS_Mcs.hpp"/>
+         <violations:violation line="108" key="cmdef" message="problem with MIS_Mcs_Replique"/>
+         <violations:violation line="108" key="constrcpy" message="problem with MIS_Mcs_Replique"/>
+         <violations:violation line="108" key="destr" message="problem with MIS_Mcs_Replique"/>
+         <violations:violation line="108" key="nostruct" message="problem with MIS_Mcs_Replique"/>
+         <violations:violation line="108" key="operass" message="problem with MIS_Mcs_Replique"/>
+         <violations:violation line="109" key="ansi" message="problem with MIS_Mcs_Replique ()"/>
+         <violations:violation line="109" key="inldef" message="problem with MIS_Mcs_Replique ()"/>
+         <violations:violation line="117" key="globinit" message="problem with MIS_Mcs_laMcs_replique_C5"/>
+         <violations:violation line="118" key="globinit" message="problem with MIS_Mcs_laMcs_replique_C4"/>
+         <violations:violation line="119" key="globinit" message="problem with MIS_Mcs_laMcs_replique_C1"/>
+         <violations:violation line="154" key="parammode" message="problem with p_tacheCourante"/>
+         <violations:violation line="154" key="sglreturn" message="problem with switchLaMcs (IdTache)"/>
+         <violations:violation line="201" key="cmclass" message="problem with initialiserInstances"/>
+         <violations:violation line="225" key="cmclass" message="problem with initialiserReplique"/>
+         <violations:violation line="225" key="parammode" message="problem with p_repliqueDest"/>
+         <violations:violation line="226" key="parammode" message="problem with p_repliqueSrc"/>
+         <violations:violation line="227" key="parammode" message="problem with p_tacheAInitialiser"/>
+         <violations:violation line="241" key="cmclass" message="problem with initialiserLesRepliques"/>
+         <violations:violation line="261" key="cmclass" message="problem with abonnerObjetsActifs"/>
+         <violations:violation line="281" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtDemandeDebutTestMcs.initialiser"/>
+         <violations:violation line="282" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C5.evtDemandeDebutTestMcs.initialiser"/>
+         <violations:violation line="283" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C1.evtDemandeDebutTestMcs.initialiser"/>
+         <violations:violation line="285" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtDemandeArretTestMcs.initialiser"/>
+         <violations:violation line="286" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C5.evtDemandeArretTestMcs.initialiser"/>
+         <violations:violation line="287" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C1.evtDemandeArretTestMcs.initialiser"/>
+         <violations:violation line="289" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtRTIDeltaModeMcs.initialiser"/>
+         <violations:violation line="290" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtRTIDeltaModeMcs.initialiser"/>
+         <violations:violation line="292" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C1.evtRTIDeltaAme.initialiser"/>
+         <violations:violation line="293" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtRTIDeltaAme.initialiser"/>
+         <violations:violation line="295" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C1.evtRTIDeltaValResultatTest.initialiser"/>
+         <violations:violation line="296" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtRTIDeltaValResultatTest.initialiser"/>
+         <violations:violation line="298" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C1.evtRTIDeltaResultatTest.initialiser"/>
+         <violations:violation line="299" key="classuse"
+                    message="problem with MIS_Mcs_laMcs_replique_C4.evtRTIDeltaResultatTest.initialiser"/>
+         <violations:violation line="310" key="cmclass" message="problem with initialiserCommunications"/>
+      </violations:file>
+      <violations:file path=".\..\..\SRC\MIS_Commande.cpp">
+         <violations:violation line="19" key="incltype" message="problem with MIS_Commande.hpp"/>
+         <violations:violation line="23" key="incltype" message="problem with MSG_CdeStdBiea.hpp"/>
+         <violations:violation line="24" key="incltype" message="problem with MSG_SurveillanceEmport.hpp"/>
+         <violations:violation line="28" key="incltype" message="problem with SUP_MediateurMIS.hpp"/>
+         <violations:violation line="43" key="classuse"
+                    message="problem with MSG_SurveillanceEmport::msg().set().motAr.arCommandeStandard"/>
+         <violations:violation line="51" key="boolean"
+                    message="problem with if (MSG_CdeStdBiea::msg().estRecu())"/>
+         <violations:violation line="54" key="boolean"
+                    message="problem with if (drapMessageValide_.estLeve())"/>
+         <violations:violation line="67" key="ctrlblock"
+                    message="problem with if (( SUP_MediateurMIS::evtPasserEnAttenteSnaEstLeve() ) || ( SUP_MediateurMIS..."/>
+         <violations:violation line="82" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="128" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="163" key="parammode" message="problem with p_mdfRecu"/>
+         <violations:violation line="216" key="boolean"
+                    message="problem with if (drapMessageValide_.estLeve())"/>
+         <violations:violation line="283" key="boolean"
+                    message="problem with if (SUP_MediateurMIS::evtPasserEnAttenteSnaEstLeve())"/>
+         <violations:violation line="292" key="boolean"
+                    message="problem with if (SUP_MediateurMIS::evtPasserEnModeInhibeEstLeve())"/>
+         <violations:violation line="317" key="ctrlblock"
+                    message="problem with if (cdeStdBiea.cdeHorsSecurite &amp;&amp; !cdeStdBiea.cdeEnSecurite)"/>
+         <violations:violation line="423" key="classuse"
+                    message="problem with msgSurveillanceEmport.set().motAr.arCommandeStandard"/>
+      </violations:file>
+      <violations:file path=".\..\..\SRC\MIS_Configuration.cpp">
+         <violations:violation line="18" key="incltype" message="problem with MIS_Configuration.hpp"/>
+         <violations:violation line="22" key="incltype" message="problem with MSG_ParamConfigBiea.hpp"/>
+         <violations:violation line="23" key="incltype" message="problem with MSG_SurveillanceEmport.hpp"/>
+         <violations:violation line="27" key="incltype" message="problem with GAM_API_CoupleurEmport.hpp"/>
+         <violations:violation line="29" key="incltype" message="problem with SUP_MediateurMIS.hpp"/>
+         <violations:violation line="32" key="globinit" message="problem with paramConfigBiea_"/>
+         <violations:violation line="34" key="globinit" message="problem with validiteConfiguration_"/>
+         <violations:violation line="195" key="classuse"
+                    message="problem with MSG_SurveillanceEmport::msg().set().motAr.arParametresDeConf"/>
+         <violations:violation line="204" key="boolean"
+                    message="problem with if (drapMessageValide_.estLeve())"/>
+         <violations:violation line="210" key="boolean"
+                    message="problem with if (evtFinForcageMsgSurv_.estLeve())"/>
+         <violations:violation line="223" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="256" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="345" key="classuse"
+                    message="problem with msgSurveillanceEmport.set().motAr.arParametresDeConf"/>
+         <violations:violation line="368" key="boolean"
+                    message="problem with if (drapMessageValide_.estLeve())"/>
+         <violations:violation line="388" key="classuse"
+                    message="problem with msgSurveillanceEmport.set().infosSurveillanceStandardMe.validiteTransfertConf"/>
+         <violations:violation line="397" key="boolean"
+                    message="problem with if (evtFinForcageMsgSurv_.estLeve())"/>
+         <violations:violation line="399" key="classuse"
+                    message="problem with msgSurveillanceEmport.set().infosSurveillanceStandardMe.validiteTransfertConf"/>
+      </violations:file>
+      <violations:file path=".\..\..\SRC\MIS_ElaborationMessagesSna.cpp">
+         <violations:violation line="18" key="incltype" message="problem with MIS_ElaborationMessagesSna.hpp"/>
+         <violations:violation line="23" key="incltype" message="problem with GAM_API_EtatReseauEmport.hpp"/>
+         <violations:violation line="25" key="incltype" message="problem with SUP_MediateurMIS.hpp"/>
+         <violations:violation line="27" key="incltype" message="problem with BIEA_CT.hpp"/>
+         <violations:violation line="29" key="incltype" message="problem with BIEA_CT_REGLAGE.hpp"/>
+         <violations:violation line="31" key="incltype" message="problem with MSG_SurveillanceEmport.hpp"/>
+         <violations:violation line="32" key="incltype" message="problem with MSG_EtatEmport.hpp"/>
+         <violations:violation line="33" key="incltype" message="problem with MSG_Ident1760Emport.hpp"/>
+         <violations:violation line="34" key="incltype" message="problem with MSG_IdentMatLogBiea.hpp"/>
+         <violations:violation line="35" key="incltype" message="problem with MSG_RetourTdeBiea.hpp"/>
+         <violations:violation line="36" key="incltype" message="problem with MSG_AllerTde.hpp"/>
+         <violations:violation line="38" key="incltype" message="problem with MIS_Commande.hpp"/>
+         <violations:violation line="40" key="incltype" message="problem with MIS_Configuration.hpp"/>
+         <violations:violation line="42" key="incltype" message="problem with MIS_Mcs.hpp"/>
+         <violations:violation line="47" key="parammode" message="problem with s1"/>
+         <violations:violation line="47" key="parammode" message="problem with s2"/>
+         <violations:violation line="47" key="parammode" message="problem with n"/>
+         <violations:violation line="86" key="boolean"
+                    message="problem with if (MSG_AllerTde::msg().estRecu())"/>
+         <violations:violation line="92" key="classuse"
+                    message="problem with MIS_Commande::laCommande().evtRTIDeltaMdfBiea.estLeve"/>
+         <violations:violation line="106" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="170" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="201" key="classuse"
+                    message="problem with MSG_EtatEmport::msg().set().meBiea.initEnCours"/>
+         <violations:violation line="221" key="parammode" message="problem with p_etatInterne"/>
+         <violations:violation line="227" key="exprparenth"
+                    message="problem with ( p_etatInterne.panneCarteUT == BIEA_CT::PANNE ) || ( p_etatInterne.panneCarte..."/>
+         <violations:violation line="276" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.panneActiviteBusEmport"/>
+         <violations:violation line="280" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.panneActiviteBusEmport"/>
+         <violations:violation line="287" key="boolean"
+                    message="problem with if (msgEtatAVarie(etatEmportPrec_, msgEtatEmport.set()))"/>
+         <violations:violation line="298" key="classuse"
+                    message="problem with msgEtatEmport.get().meBiea.panneEptPrimInconnu"/>
+         <violations:violation line="302" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.resultatTest"/>
+         <violations:violation line="307" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.resultatTest"/>
+         <violations:violation line="312" key="boolean"
+                    message="problem with if (SUP_MediateurMIS::evtPasserEnAttenteSnaEstLeve())"/>
+         <violations:violation line="330" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.initEnCours"/>
+         <violations:violation line="335" key="ctrlblock" message="problem with if (lireTypeInit() == REI)"/>
+         <violations:violation line="337" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.initEnCours"/>
+         <violations:violation line="347" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.panneEptPrimInconnu"/>
+         <violations:violation line="354" key="boolean"
+                    message="problem with if (tempoInitEnCours_.estExpiree())"/>
+         <violations:violation line="356" key="classuse"
+                    message="problem with msgEtatEmport.set().meBiea.initEnCours"/>
+         <violations:violation line="399" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.header"/>
+         <violations:violation line="400" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.header"/>
+         <violations:violation line="401" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.countryCode"/>
+         <violations:violation line="402" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.countryCode"/>
+         <violations:violation line="403" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.motIdentification"/>
+         <violations:violation line="404" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.maxInterruptiveBitT..."/>
+         <violations:violation line="407" key="classuse"
+                    message="problem with SUP_MediateurMIS::lireConstantes().VAL_FORC_MSG_IDENT_1760.storeIdentity"/>
+         <violations:violation line="424" key="ctrlblock"
+                    message="problem with if (idx2 &lt; ( K_TAILLE_IDENT_CONF_MAT + K_TAILLE_IDENT_CONF_MOYEN_EMP ))"/>
+         <violations:violation line="436" key="parammode" message="problem with p_msgEtatPrec"/>
+         <violations:violation line="437" key="parammode" message="problem with p_msgEtat"/>
+         <violations:violation line="441" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meBiea, &amp;p_msgEtat.meBiea, sizeof( MSG_TypeEtatEmpor..."/>
+         <violations:violation line="448" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiBiea, &amp;p_msgEtat.meiBiea, sizeof( MSG_TypeEtatEmp..."/>
+         <violations:violation line="448" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiBiea, &amp;p_msgEtat.meiBiea, sizeof( MSG_TypeEtatEmp..."/>
+         <violations:violation line="455" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.mePu, &amp;p_msgEtat.mePu, sizeof( MSG_TypeEtatEmport::T..."/>
+         <violations:violation line="455" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.mePu, &amp;p_msgEtat.mePu, sizeof( MSG_TypeEtatEmport::T..."/>
+         <violations:violation line="462" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meCharge, &amp;p_msgEtat.meCharge, sizeof( MSG_TypeEtatE..."/>
+         <violations:violation line="462" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meCharge, &amp;p_msgEtat.meCharge, sizeof( MSG_TypeEtatE..."/>
+         <violations:violation line="469" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge1, &amp;p_msgEtat.meiCharge1, sizeof( MSG_TypeE..."/>
+         <violations:violation line="469" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge1, &amp;p_msgEtat.meiCharge1, sizeof( MSG_TypeE..."/>
+         <violations:violation line="476" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge2, &amp;p_msgEtat.meiCharge2, sizeof( MSG_TypeE..."/>
+         <violations:violation line="476" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge2, &amp;p_msgEtat.meiCharge2, sizeof( MSG_TypeE..."/>
+         <violations:violation line="483" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge3, &amp;p_msgEtat.meiCharge3, sizeof( MSG_TypeE..."/>
+         <violations:violation line="483" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge3, &amp;p_msgEtat.meiCharge3, sizeof( MSG_TypeE..."/>
+         <violations:violation line="490" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge4, &amp;p_msgEtat.meiCharge4, sizeof( MSG_TypeE..."/>
+         <violations:violation line="490" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiCharge4, &amp;p_msgEtat.meiCharge4, sizeof( MSG_TypeE..."/>
+         <violations:violation line="497" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meBiad, &amp;p_msgEtat.meBiad, sizeof( MSG_CtMotDEtat::T..."/>
+         <violations:violation line="497" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meBiad, &amp;p_msgEtat.meBiad, sizeof( MSG_CtMotDEtat::T..."/>
+         <violations:violation line="504" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiBiad, &amp;p_msgEtat.meiBiad, sizeof( MSG_CtMotDEtat:..."/>
+         <violations:violation line="504" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meiBiad, &amp;p_msgEtat.meiBiad, sizeof( MSG_CtMotDEtat:..."/>
+         <violations:violation line="511" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meAdp, &amp;p_msgEtat.meAdp, sizeof( MSG_CtMotDEtat::TMo..."/>
+         <violations:violation line="511" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.meAdp, &amp;p_msgEtat.meAdp, sizeof( MSG_CtMotDEtat::TMo..."/>
+         <violations:violation line="518" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.motModeCharge, &amp;p_msgEtat.motModeCharge, sizeof( MSG..."/>
+         <violations:violation line="518" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgEtatPrec.motModeCharge, &amp;p_msgEtat.motModeCharge, sizeof( MSG..."/>
+         <violations:violation line="530" key="parammode" message="problem with p_msgSurvPrec"/>
+         <violations:violation line="531" key="parammode" message="problem with p_msgSurv"/>
+         <violations:violation line="535" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceStandardMe, &amp;p_msgSurv.infosSurveil..."/>
+         <violations:violation line="542" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceMeoCharge, &amp;p_msgSurv.infosSurveill..."/>
+         <violations:violation line="542" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceMeoCharge, &amp;p_msgSurv.infosSurveill..."/>
+         <violations:violation line="550" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceSpecifiqueMeA, &amp;p_msgSurv.infosSurv..."/>
+         <violations:violation line="550" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceSpecifiqueMeA, &amp;p_msgSurv.infosSurv..."/>
+         <violations:violation line="558" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceSpecifiqueMeB, &amp;p_msgSurv.infosSurv..."/>
+         <violations:violation line="558" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.infosSurveillanceSpecifiqueMeB, &amp;p_msgSurv.infosSurv..."/>
+         <violations:violation line="565" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.motAr, &amp;p_msgSurv.motAr, sizeof( MSG_TypeSurveillanc..."/>
+         <violations:violation line="565" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.motAr, &amp;p_msgSurv.motAr, sizeof( MSG_TypeSurveillanc..."/>
+         <violations:violation line="572" key="ctrlblock"
+                    message="problem with if (p_msgSurvPrec.valeurPositionBoisseau != p_msgSurv.valeurPositionBoisseau)"/>
+         <violations:violation line="576" key="boolean"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.surveillanceBusCharge, &amp;p_msgSurv.surveillanceBusCha..."/>
+         <violations:violation line="576" key="ctrlblock"
+                    message="problem with if (memcmp(&amp;p_msgSurvPrec.surveillanceBusCharge, &amp;p_msgSurv.surveillanceBusCha..."/>
+         <violations:violation line="582" key="ctrlblock"
+                    message="problem with if (p_msgSurvPrec.heureDepartCharge != p_msgSurv.heureDepartCharge)"/>
+         <violations:violation line="605" key="classuse"
+                    message="problem with msgSurvEmport.set().motValidite.validiteIndicateurDeVariation"/>
+         <violations:violation line="616" key="classuse"
+                    message="problem with msgSurvEmport.get().infosSurveillanceStandardMe.ddeInhibitionTirChargeInhibeeCh1"/>
+         <violations:violation line="618" key="classuse"
+                    message="problem with msgSurvEmport.set().infosSurveillanceStandardMe.ddeInhibitionTirChargeInhibeeCh1"/>
+         <violations:violation line="626" key="exprparenth"
+                    message="problem with ( MIS_Mcs::laMcs().getModeMcs() == BIEA_CT_MCS::EN_MCS ) &amp;&amp; ( ( msgSurvEmport...."/>
+         <violations:violation line="627" key="classuse"
+                    message="problem with msgSurvEmport.get().infosSurveillanceStandardMe.prCharge1"/>
+         <violations:violation line="628" key="classuse"
+                    message="problem with msgSurvEmport.get().infosSurveillanceStandardMe.prCharge2"/>
+         <violations:violation line="629" key="classuse"
+                    message="problem with msgSurvEmport.get().infosSurveillanceStandardMe.prCharge3"/>
+         <violations:violation line="630" key="classuse"
+                    message="problem with msgSurvEmport.get().infosSurveillanceStandardMe.ddeInhibitionTirChargeInhibeeCh1"/>
+         <violations:violation line="632" key="classuse"
+                    message="problem with msgSurvEmport.set().infosSurveillanceStandardMe.ddeInhibitionTirChargeInhibeeCh1"/>
+         <violations:violation line="638" key="boolean"
+                    message="problem with if (SUP_MediateurMIS::evtPasserEnAttenteSnaEstLeve())"/>
+         <violations:violation line="645" key="boolean"
+                    message="problem with if (tempoSortieCoupureCourte_.estExpiree())"/>
+         <violations:violation line="647" key="classuse"
+                    message="problem with msgSurvEmport.set().infosSurveillanceStandardMe.sortieCoupureCourte"/>
+         <violations:violation line="656" key="exprparenth"
+                    message="problem with !tempoSortieCoupureCourte_.estEnCours() &amp;&amp; passageEnAttenteSnaEffectue &amp;&amp; ( dl..."/>
+         <violations:violation line="661" key="classuse"
+                    message="problem with msgSurvEmport.set().infosSurveillanceStandardMe.sortieCoupureCourte"/>
+         <violations:violation line="668" key="classuse"
+                    message="problem with msgSurvEmport.set().infosSurveillanceStandardMe.pr28v1"/>
+         <violations:violation line="673" key="boolean"
+                    message="problem with if (msgSurveillanceAVarie(survEmportPrec_, msgSurvEmport.set()))"/>
+         <violations:violation line="676" key="classuse"
+                    message="problem with msgSurvEmport.set().motValidite.validiteIndicateurDeVariation"/>
+      </violations:file>
+      <violations:file path=".\..\..\SRC\MIS_GestionCodesTest.cpp">
+         <violations:violation line="10" key="incltype" message="problem with MIS_GestionCodesTest.hpp"/>
+         <violations:violation line="11" key="incltype" message="problem with SUP_MediateurMIS.hpp"/>
+         <violations:violation line="18" key="parammode" message="problem with p_dizaines"/>
+         <violations:violation line="18" key="parammode" message="problem with p_unites"/>
+         <violations:violation line="29" key="parammode" message="problem with p_adressePhysiqueChampDizaines"/>
+         <violations:violation line="30" key="parammode" message="problem with p_adressePhysiqueChampUnites"/>
+         <violations:violation line="46" key="parammode" message="problem with p_codeLancementChampDizaines"/>
+         <violations:violation line="47" key="parammode" message="problem with p_codeLancementChampUnites"/>
+         <violations:violation line="62" key="parammode" message="problem with p_codeTD"/>
+         <violations:violation line="97" key="parammode" message="problem with p_codeTD"/>
+         <violations:violation line="122" key="ctrlblock"
+                    message="problem with if (p_codeTD == ( SUP_MediateurMIS::lireConstantes().CODE_ARRET_TD - SUP_Media..."/>
+      </violations:file>
+      <violations:file path=".\..\..\SRC\MIS_Mcs.cpp">
+         <violations:violation line="18" key="incltype" message="problem with MIS_Mcs.hpp"/>
+         <violations:violation line="22" key="incltype" message="problem with SUP_MediateurMIS.hpp"/>
+         <violations:violation line="24" key="incltype" message="problem with MSG_McsBiea.hpp"/>
+         <violations:violation line="25" key="incltype" message="problem with MSG_TypeRetourMcsBiea.hpp"/>
+         <violations:violation line="26" key="incltype" message="problem with MSG_RetourMcsBiad.hpp"/>
+         <violations:violation line="28" key="incltype" message="problem with GAM_API_EtatReseauEmport.hpp"/>
+         <violations:violation line="30" key="incltype" message="problem with GAM_API_CoupleurEmport.hpp"/>
+         <violations:violation line="32" key="incltype" message="problem with BIEA_CT_MCS.hpp"/>
+         <violations:violation line="34" key="incltype" message="problem with MIS_Commande.hpp"/>
+         <violations:violation line="36" key="incltype" message="problem with MIS_GestionCodesTest.hpp"/>
+         <violations:violation line="41" key="globinit" message="problem with MIS_McsTrace"/>
+         <violations:violation line="42" key="globinit" message="problem with MIS_Mcs_testDeclencheLcm"/>
+         <violations:violation line="67" key="boolean"
+                    message="problem with if (MSG_McsBiea::msg().estRecu())"/>
+         <violations:violation line="93" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="166" key="parammode" message="problem with p_initAM"/>
+         <violations:violation line="219" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testTermine"/>
+         <violations:violation line="220" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testConversationnelComplet"/>
+         <violations:violation line="221" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testDuChienDeGarde"/>
+         <violations:violation line="222" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testDeclencheLcm"/>
+         <violations:violation line="223" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testMemoireDeMasse"/>
+         <violations:violation line="224" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="225" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatSurBit3Seul"/>
+         <violations:violation line="226" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatDuTest"/>
+         <violations:violation line="227" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testNecessitantDialogueOperateur"/>
+         <violations:violation line="229" key="ctrlblock"
+                    message="problem with if (( mcsBiea.cdePassageEnMCS != BIEA_CT_MCS::K_MODE_MCS ) || ( GAM_API_EtatRe..."/>
+         <violations:violation line="235" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.modeEquipement"/>
+         <violations:violation line="236" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biasEnMcs"/>
+         <violations:violation line="237" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biadEnMcs"/>
+         <violations:violation line="238" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testTermine"/>
+         <violations:violation line="239" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testConversationnelComplet"/>
+         <violations:violation line="240" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testDuChienDeGarde"/>
+         <violations:violation line="241" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testDeclencheLcm"/>
+         <violations:violation line="242" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testMemoireDeMasse"/>
+         <violations:violation line="243" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="244" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatSurBit3Seul"/>
+         <violations:violation line="245" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatDuTest"/>
+         <violations:violation line="246" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testNecessitantDialogueOperateur"/>
+         <violations:violation line="272" key="classuse"
+                    message="problem with mcsBiea.vecteurEtatMcs.lcmEnCours"/>
+         <violations:violation line="275" key="classuse"
+                    message="problem with mcsBiea.motSelectionTestDeclenche.adressePhysique.adressePhysiqueChampDizaines"/>
+         <violations:violation line="276" key="classuse"
+                    message="problem with mcsBiea.motSelectionTestDeclenche.adressePhysique.adressePhysiqueChampUnites"/>
+         <violations:violation line="277" key="classuse"
+                    message="problem with mcsBiea.motSelectionTestDeclenche.codeLancement.codeLancementChampDizaines"/>
+         <violations:violation line="278" key="classuse"
+                    message="problem with mcsBiea.motSelectionTestDeclenche.codeLancement.codeLancementChampUnites"/>
+         <violations:violation line="281" key="blockdecl" message="problem with codeTest"/>
+         <violations:violation line="285" key="blockdecl" message="problem with adressePhysique"/>
+         <violations:violation line="328" key="ctrlblock"
+                    message="problem with if (( typeCode == BIEA_CT_MCS::TTypeCode_ARRET ) || ( typeCode == BIEA_CT_MCS:..."/>
+         <violations:violation line="339" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="361" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="381" key="ctrlblock"
+                    message="problem with if (( SUP_MediateurMIS::lireTestDeclenche() == BIEA_CT_MCS::TEtatTD_NON_EN_COU..."/>
+         <violations:violation line="390" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="417" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatDuTest"/>
+         <violations:violation line="418" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.resultatSurBit3Seul"/>
+         <violations:violation line="419" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testDeclencheLcm"/>
+         <violations:violation line="421" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testMemoireDeMasse"/>
+         <violations:violation line="422" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testRefuse"/>
+         <violations:violation line="423" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.testTermine"/>
+         <violations:violation line="445" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.modeEquipement"/>
+         <violations:violation line="446" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biasEnMcs"/>
+         <violations:violation line="447" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biadEnMcs"/>
+         <violations:violation line="452" key="classuse"
+                    message="problem with msgRetourMcsBiad.get().ame.modeEquipement"/>
+         <violations:violation line="455" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.modeEquipement"/>
+         <violations:violation line="456" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biasEnMcs"/>
+         <violations:violation line="457" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biadEnMcs"/>
+         <violations:violation line="462" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.modeEquipement"/>
+         <violations:violation line="463" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biasEnMcs"/>
+         <violations:violation line="464" key="classuse"
+                    message="problem with msgRetourMcsBiea.set().ame.biadEnMcs"/>
+         <violations:violation line="476" key="parammode" message="problem with ame"/>
+         <violations:violation line="486" key="parammode" message="problem with valResultatTest"/>
+         <violations:violation line="496" key="parammode" message="problem with resultatTest"/>
+         <violations:violation line="509" key="parammode" message="problem with p_dizaines"/>
+         <violations:violation line="509" key="parammode" message="problem with p_unites"/>
+         <violations:violation line="522" key="parammode" message="problem with p_codeTD"/>
+         <violations:violation line="546" key="ctrlblock"
+                    message="problem with if (p_codeTD == ( SUP_MediateurMIS::lireConstantes().CODE_ARRET_TD - SUP_Media..."/>
+         <violations:violation line="564" key="parammode" message="problem with p_codeTD"/>
+      </violations:file>
+   </tusar:violations>
+</tusar:tusar>

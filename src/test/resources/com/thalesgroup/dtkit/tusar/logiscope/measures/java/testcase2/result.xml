@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tusar xmlns="http://www.thalesgroup.com/tusar/tests/v3" xmlns:ns2="http://www.thalesgroup.com/tusar/v3" xmlns:ns3="http://www.thalesgroup.com/tusar/coverage/v3" xmlns:ns4="http://www.thalesgroup.com/tusar/violations/v3" xmlns:ns5="http://www.thalesgroup.com/tusar/measures/v3" version="3.0" xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ns2:measures>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\AbstractRender.java">
+            <ns5:measure key="INSTRUCTIONS" value="32.0"/>
+            <ns5:measure key="COMPLEXITY" value="10.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\ThreadedStandardOutputWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="29.0"/>
+            <ns5:measure key="COMPLEXITY" value="11.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\GrammarFactory.java">
+            <ns5:measure key="INSTRUCTIONS" value="16"/>
+            <ns5:measure key="COMPLEXITY" value="8"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\SqlInsertRendererFromDBF.java">
+            <ns5:measure key="INSTRUCTIONS" value="87.0"/>
+            <ns5:measure key="COMPLEXITY" value="29.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\exceptions\ThreadedWriterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="2"/>
+            <ns5:measure key="COMPLEXITY" value="1"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\exceptions\InvalidParameterValueException.java">
+            <ns5:measure key="INSTRUCTIONS" value="10.0"/>
+            <ns5:measure key="COMPLEXITY" value="4.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\JdbcWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="42.0"/>
+            <ns5:measure key="COMPLEXITY" value="14.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\ConfiguratorException.java">
+            <ns5:measure key="INSTRUCTIONS" value="2"/>
+            <ns5:measure key="COMPLEXITY" value="1"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\splitters\Standard.java">
+            <ns5:measure key="INSTRUCTIONS" value="12"/>
+            <ns5:measure key="COMPLEXITY" value="4"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldDouble.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\oracle\GrammarFactory.java">
+            <ns5:measure key="INSTRUCTIONS" value="16"/>
+            <ns5:measure key="COMPLEXITY" value="8"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\SqlInsertRenderer.java">
+            <ns5:measure key="INSTRUCTIONS" value="128.0"/>
+            <ns5:measure key="COMPLEXITY" value="47.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\JdbcBatchWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="54.0"/>
+            <ns5:measure key="COMPLEXITY" value="16.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\Configurator.java">
+            <ns5:measure key="INSTRUCTIONS" value="0.0"/>
+            <ns5:measure key="COMPLEXITY" value="0.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\console\ConsoleMain.java">
+            <ns5:measure key="INSTRUCTIONS" value="48.0"/>
+            <ns5:measure key="COMPLEXITY" value="14.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\exceptions\MissingRequiredParameterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\standard\IntegerField.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\StandardOutputWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="8.0"/>
+            <ns5:measure key="COMPLEXITY" value="5.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\standard\StringField.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\ThinGui.java">
+            <ns5:measure key="INSTRUCTIONS" value="364.0"/>
+            <ns5:measure key="COMPLEXITY" value="63.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\exceptions\WriterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\standard\GrammarFactory.java">
+            <ns5:measure key="INSTRUCTIONS" value="16"/>
+            <ns5:measure key="COMPLEXITY" value="8"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\oracle\OracleFieldNumber.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\SqlMultipleFileWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="52.0"/>
+            <ns5:measure key="COMPLEXITY" value="15.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\exceptions\GrammarFactoryException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\JFrameHelp.java">
+            <ns5:measure key="INSTRUCTIONS" value="23.0"/>
+            <ns5:measure key="COMPLEXITY" value="5.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\AbstractWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="27.0"/>
+            <ns5:measure key="COMPLEXITY" value="9.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\LogFileFilter.java">
+            <ns5:measure key="INSTRUCTIONS" value="15.0"/>
+            <ns5:measure key="COMPLEXITY" value="6.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\exceptions\InvalidParameterValueException.java">
+            <ns5:measure key="INSTRUCTIONS" value="10.0"/>
+            <ns5:measure key="COMPLEXITY" value="4.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\Memory.java">
+            <ns5:measure key="INSTRUCTIONS" value="12.0"/>
+            <ns5:measure key="COMPLEXITY" value="6.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\exceptions\StorageException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\exceptions\MissingRequiredParameterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\oracle\OracleFieldDate.java">
+            <ns5:measure key="INSTRUCTIONS" value="26.0"/>
+            <ns5:measure key="COMPLEXITY" value="9.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\idgenerators\Time.java">
+            <ns5:measure key="INSTRUCTIONS" value="6"/>
+            <ns5:measure key="COMPLEXITY" value="2"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\standard\DateField.java">
+            <ns5:measure key="INSTRUCTIONS" value="26.0"/>
+            <ns5:measure key="COMPLEXITY" value="9.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\sections\WriterList.java">
+            <ns5:measure key="INSTRUCTIONS" value="6.0"/>
+            <ns5:measure key="COMPLEXITY" value="3.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldDate.java">
+            <ns5:measure key="INSTRUCTIONS" value="26.0"/>
+            <ns5:measure key="COMPLEXITY" value="9.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldSmallint.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\splitters\Simple.java">
+            <ns5:measure key="INSTRUCTIONS" value="2"/>
+            <ns5:measure key="COMPLEXITY" value="1"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldMediumint.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\idgenerators\IdGenerator.java">
+            <ns5:measure key="INSTRUCTIONS" value="0"/>
+            <ns5:measure key="COMPLEXITY" value="0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\standard\FloatField.java">
+            <ns5:measure key="INSTRUCTIONS" value="15.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\idgenerators\Incremental.java">
+            <ns5:measure key="INSTRUCTIONS" value="2"/>
+            <ns5:measure key="COMPLEXITY" value="1"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\Disk.java">
+            <ns5:measure key="INSTRUCTIONS" value="50.0"/>
+            <ns5:measure key="COMPLEXITY" value="15.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\oracle\OracleFieldVarchar.java">
+            <ns5:measure key="INSTRUCTIONS" value="13.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldBigint.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldTinyint.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\exceptions\RendererException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\exceptions\MissingRequiredParameterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\exceptions\FieldRenderException.java">
+            <ns5:measure key="INSTRUCTIONS" value="8.0"/>
+            <ns5:measure key="COMPLEXITY" value="3.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\exceptions\ThreadedInvalidParameterValueException.java">
+            <ns5:measure key="INSTRUCTIONS" value="10.0"/>
+            <ns5:measure key="COMPLEXITY" value="4.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\postgres\GrammarFactory.java">
+            <ns5:measure key="INSTRUCTIONS" value="16"/>
+            <ns5:measure key="COMPLEXITY" value="8"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\SqlInsertRendererFromExcel.java">
+            <ns5:measure key="INSTRUCTIONS" value="105.0"/>
+            <ns5:measure key="COMPLEXITY" value="36.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\exceptions\InvalidParameterValueException.java">
+            <ns5:measure key="INSTRUCTIONS" value="10.0"/>
+            <ns5:measure key="COMPLEXITY" value="4.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\ThreadedAbstractWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="13.0"/>
+            <ns5:measure key="COMPLEXITY" value="5.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\SimpleGui.java">
+            <ns5:measure key="INSTRUCTIONS" value="74.0"/>
+            <ns5:measure key="COMPLEXITY" value="15.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\JFrameGPL.java">
+            <ns5:measure key="INSTRUCTIONS" value="13.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\SqlInsertRendererFromArray.java">
+            <ns5:measure key="INSTRUCTIONS" value="101.0"/>
+            <ns5:measure key="COMPLEXITY" value="37.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\SqlFileWriter.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="6.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\utils\JarLoader.java">
+            <ns5:measure key="INSTRUCTIONS" value="10.0"/>
+            <ns5:measure key="COMPLEXITY" value="3.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\sections\TableStructure.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\writers\exceptions\MissingRequiredParameterException.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldChar.java">
+            <ns5:measure key="INSTRUCTIONS" value="13.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\AbstractField.java">
+            <ns5:measure key="INSTRUCTIONS" value="52.0"/>
+            <ns5:measure key="COMPLEXITY" value="17.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\utils\DBUtils.java">
+            <ns5:measure key="INSTRUCTIONS" value="12.0"/>
+            <ns5:measure key="COMPLEXITY" value="5.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\postgres\PostgresFieldInteger.java">
+            <ns5:measure key="INSTRUCTIONS" value="14.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\postgres\PostgresFieldCharacter.java">
+            <ns5:measure key="INSTRUCTIONS" value="13.0"/>
+            <ns5:measure key="COMPLEXITY" value="7.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\frontends\gui\simple\DescriptorFilter.java">
+            <ns5:measure key="INSTRUCTIONS" value="4.0"/>
+            <ns5:measure key="COMPLEXITY" value="2.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\ManualConfigurator.java">
+            <ns5:measure key="INSTRUCTIONS" value="48.0"/>
+            <ns5:measure key="COMPLEXITY" value="24.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\renders\splitters\Splitter.java">
+            <ns5:measure key="INSTRUCTIONS" value="0"/>
+            <ns5:measure key="COMPLEXITY" value="0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\AbstractGrammarFactory.java">
+            <ns5:measure key="INSTRUCTIONS" value="0"/>
+            <ns5:measure key="COMPLEXITY" value="0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\configuration\XmlConfigurator.java">
+            <ns5:measure key="INSTRUCTIONS" value="92.0"/>
+            <ns5:measure key="COMPLEXITY" value="39.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\storage\Storage.java">
+            <ns5:measure key="INSTRUCTIONS" value="24.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldBit.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldFloat.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\csvtosql\src\net\sf\csv2sql\grammars\mysql\MysqlFieldInt.java">
+            <ns5:measure key="INSTRUCTIONS" value="16.0"/>
+            <ns5:measure key="COMPLEXITY" value="8.0"/>
+        </ns5:resource>
+    </ns2:measures>
+</ns2:tusar>

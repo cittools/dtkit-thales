@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tusar xmlns="http://www.thalesgroup.com/tusar/tests/v3" xmlns:ns2="http://www.thalesgroup.com/tusar/v3" xmlns:ns3="http://www.thalesgroup.com/tusar/coverage/v3" xmlns:ns4="http://www.thalesgroup.com/tusar/violations/v3" xmlns:ns5="http://www.thalesgroup.com/tusar/measures/v3" version="3.0" xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ns2:measures>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\OneArmedBandit\onearmedbandit.adb">
+            <ns5:measure key="INSTRUCTIONS" value="93.0"/>
+            <ns5:measure key="COMPLEXITY" value="26.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="D:\Aravindan\projet_exemples\OneArmedBandit\slotmachine.adb">
+            <ns5:measure key="INSTRUCTIONS" value="7"/>
+            <ns5:measure key="COMPLEXITY" value="3"/>
+        </ns5:resource>
+    </ns2:measures>
+</ns2:tusar>

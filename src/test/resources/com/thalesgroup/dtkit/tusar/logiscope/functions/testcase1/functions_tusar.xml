@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tusar:tusar xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:tusar="http://www.thalesgroup.com/tusar/v2"
+             xmlns:measures="http://www.thalesgroup.com/tusar/measures/v2">
+   <tusar:measures>
+      <measures:resource type="FILE" value=".\..\..\GEN\SRC\MIS_Commande_Com.cpp">
+         <measures:measure key="COMPLEXITY" value="12"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\GEN\SRC\MIS_Configuration_Com.cpp">
+         <measures:measure key="COMPLEXITY" value="12"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\GEN\SRC\MIS_ElaborationMessagesSna_Com.cpp">
+         <measures:measure key="COMPLEXITY" value="12"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\GEN\SRC\MIS_Mcs_Com.cpp">
+         <measures:measure key="COMPLEXITY" value="12"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\SRC\MIS_Commande.cpp">
+         <measures:measure key="COMPLEXITY" value="48"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\SRC\MIS_Configuration.cpp">
+         <measures:measure key="COMPLEXITY" value="22"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\SRC\MIS_ElaborationMessagesSna.cpp">
+         <measures:measure key="COMPLEXITY" value="66"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\SRC\MIS_GestionCodesTest.cpp">
+         <measures:measure key="COMPLEXITY" value="11"/>
+      </measures:resource>
+      <measures:resource type="FILE" value=".\..\..\SRC\MIS_Mcs.cpp">
+         <measures:measure key="COMPLEXITY" value="42"/>
+      </measures:resource>
+   </tusar:measures>
+</tusar:tusar>

@@ -1,0 +1,8 @@
+com.thalesgroup.dtkit.tusar.SLCNT
+com.thalesgroup.dtkit.tusar.LogiscopeAuditAda
+com.thalesgroup.dtkit.tusar.LogiscopeAuditC
+com.thalesgroup.dtkit.tusar.LogiscopeAuditCpp
+com.thalesgroup.dtkit.tusar.LogiscopeAuditJava
+com.thalesgroup.dtkit.tusar.LogiscopeRuleChecker
+com.thalesgroup.dtkit.tusar.Gnatcheck632
+com.thalesgroup.dtkit.tusar.valgrind.ValgrindMemCheck

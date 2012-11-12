@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tusar xmlns="http://www.thalesgroup.com/tusar/tests/v3" xmlns:ns2="http://www.thalesgroup.com/tusar/v3" xmlns:ns3="http://www.thalesgroup.com/tusar/coverage/v3" xmlns:ns4="http://www.thalesgroup.com/tusar/violations/v3" xmlns:ns5="http://www.thalesgroup.com/tusar/measures/v3" version="3.0" xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ns2:measures>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\player.c">
+            <ns5:measure key="INSTRUCTIONS" value="114.0"/>
+            <ns5:measure key="COMPLEXITY" value="42.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\score.c">
+            <ns5:measure key="INSTRUCTIONS" value="178.0"/>
+            <ns5:measure key="COMPLEXITY" value="28.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\write.c">
+            <ns5:measure key="INSTRUCTIONS" value="204.0"/>
+            <ns5:measure key="COMPLEXITY" value="19.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\machine.c">
+            <ns5:measure key="INSTRUCTIONS" value="318.0"/>
+            <ns5:measure key="COMPLEXITY" value="94.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\base.c">
+            <ns5:measure key="INSTRUCTIONS" value="27.0"/>
+            <ns5:measure key="COMPLEXITY" value="14.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\master.c">
+            <ns5:measure key="INSTRUCTIONS" value="39.0"/>
+            <ns5:measure key="COMPLEXITY" value="16.0"/>
+        </ns5:resource>
+        <ns5:resource type="FILE" value="C:\Program Files\Telelogic\Logiscope_6.5\samples\C\Mastermind\util.c">
+            <ns5:measure key="INSTRUCTIONS" value="41.0"/>
+            <ns5:measure key="COMPLEXITY" value="22.0"/>
+        </ns5:resource>
+    </ns2:measures>
+</ns2:tusar>

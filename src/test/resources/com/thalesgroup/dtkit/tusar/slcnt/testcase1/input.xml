@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slcnt:slcnt xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:slcnt="http://www.thalesgroup.com/slcnt/v2"
+             version="2.0">
+    <slcnt:file name="examples\A_test.pl">
+        <slcnt:metric key="LT" value="64" />
+        <slcnt:metric key="LS" value="47" />
+        <slcnt:metric key="LI" value="44" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="6" />
+    </slcnt:file>
+    <slcnt:file name="examples\code_with_huge_words.c">
+        <slcnt:metric key="LT" value="31" />
+        <slcnt:metric key="LS" value="12" />
+        <slcnt:metric key="LI" value="6" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="12" />
+    </slcnt:file>
+    <slcnt:error file="examples\dash-directory">
+        <![CDATA[examples\dash-directory: can't open; Permission denied]]>
+    </slcnt:error>
+    <slcnt:info file="examples\databasedump.sql">
+        <![CDATA[examples\databasedump.sql: end of character not found (line 658)]]>
+    </slcnt:info>
+    <slcnt:file name="examples\databasedump.sql">
+        <slcnt:metric key="LT" value="658" />
+        <slcnt:metric key="LS" value="557" />
+        <slcnt:metric key="LI" value="25" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="58" />
+    </slcnt:file>
+    <slcnt:file name="examples\DOMUtils.java">
+        <slcnt:metric key="LT" value="294" />
+        <slcnt:metric key="LS" value="140" />
+        <slcnt:metric key="LI" value="59" />
+        <slcnt:metric key="LC" value="1" />
+        <slcnt:metric key="LM" value="132" />
+    </slcnt:file>
+    <slcnt:info file="examples\egalis.c">
+        <![CDATA[examples\egalis.c: end of character not found (line 980)]]>
+    </slcnt:info>
+    <slcnt:file name="examples\egalis.c">
+        <slcnt:metric key="LT" value="980" />
+        <slcnt:metric key="LS" value="654" />
+        <slcnt:metric key="LI" value="310" />
+        <slcnt:metric key="LC" value="50" />
+        <slcnt:metric key="LM" value="189" />
+    </slcnt:file>
+    <slcnt:warning file="examples\exemp.asm">
+        <![CDATA[examples\exemp.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:info file="examples\fonction.c">
+        <![CDATA[examples\fonction.c: end of character not found (line 476)]]>
+    </slcnt:info>
+    <slcnt:file name="examples\fonction.c">
+        <slcnt:metric key="LT" value="476" />
+        <slcnt:metric key="LS" value="169" />
+        <slcnt:metric key="LI" value="48" />
+        <slcnt:metric key="LC" value="16" />
+        <slcnt:metric key="LM" value="218" />
+    </slcnt:file>
+    <slcnt:warning file="examples\isr_rsbch.asm">
+        <![CDATA[examples\isr_rsbch.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:file name="examples\jquery.js">
+        <slcnt:metric key="LT" value="6078" />
+        <slcnt:metric key="LS" value="4355" />
+        <slcnt:metric key="LI" value="1648" />
+        <slcnt:metric key="LC" value="14" />
+        <slcnt:metric key="LM" value="668" />
+    </slcnt:file>
+    <slcnt:file name="examples\lim.c">
+        <slcnt:metric key="LT" value="11" />
+        <slcnt:metric key="LS" value="10" />
+        <slcnt:metric key="LI" value="6" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="0" />
+    </slcnt:file>
+    <slcnt:info file="examples/egalis.c">
+        <![CDATA[examples/egalis.c: end of character not found (line 980)]]>
+    </slcnt:info>
+    <slcnt:file name="examples/egalis.c">
+        <slcnt:metric key="LT" value="980" />
+        <slcnt:metric key="LS" value="654" />
+        <slcnt:metric key="LI" value="310" />
+        <slcnt:metric key="LC" value="50" />
+        <slcnt:metric key="LM" value="189" />
+    </slcnt:file>
+    <slcnt:file name="examples/DOMUtils.java">
+        <slcnt:metric key="LT" value="294" />
+        <slcnt:metric key="LS" value="140" />
+        <slcnt:metric key="LI" value="59" />
+        <slcnt:metric key="LC" value="1" />
+        <slcnt:metric key="LM" value="132" />
+    </slcnt:file>
+    <slcnt:warning file="examples/exemp.asm">
+        <![CDATA[examples/exemp.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:info file="examples/fonction.c">
+        <![CDATA[examples/fonction.c: end of character not found (line 476)]]>
+    </slcnt:info>
+    <slcnt:file name="examples/fonction.c">
+        <slcnt:metric key="LT" value="476" />
+        <slcnt:metric key="LS" value="168" />
+        <slcnt:metric key="LI" value="48" />
+        <slcnt:metric key="LC" value="15" />
+        <slcnt:metric key="LM" value="219" />
+    </slcnt:file>
+    <slcnt:error file="examples/isr-rsbch.asm">
+        <![CDATA[examples/isr-rsbch.asm: can't open; No such file or directory]]>
+    </slcnt:error>
+    <slcnt:file name="examples/lim.c">
+        <slcnt:metric key="LT" value="11" />
+        <slcnt:metric key="LS" value="10" />
+        <slcnt:metric key="LI" value="6" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="0" />
+    </slcnt:file>
+    <slcnt:warning file="examples/rt_hd_dsp.asm">
+        <![CDATA[examples/rt_hd_dsp.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:warning file="examples/rt_hd_rsbch.asm">
+        <![CDATA[examples/rt_hd_rsbch.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:file name="examples/DOMUtils.java">
+        <slcnt:metric key="LT" value="294" />
+        <slcnt:metric key="LS" value="139" />
+        <slcnt:metric key="LI" value="59" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="133" />
+    </slcnt:file>
+    <slcnt:file name="examples/nest/nest/lim11.c">
+        <slcnt:metric key="LT" value="11" />
+        <slcnt:metric key="LS" value="10" />
+        <slcnt:metric key="LI" value="6" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="0" />
+    </slcnt:file>
+    <slcnt:error file="examples/nest/lim1.c">
+        <![CDATA[examples/nest/lim1.c: can't open; No such file or directory]]>
+    </slcnt:error>
+    <slcnt:file name="examples/nest space/a slcnt.c">
+        <slcnt:metric key="LT" value="2736" />
+        <slcnt:metric key="LS" value="1689" />
+        <slcnt:metric key="LI" value="684" />
+        <slcnt:metric key="LC" value="278" />
+        <slcnt:metric key="LM" value="893" />
+    </slcnt:file>
+    <slcnt:file name="examples/Program.cs">
+        <slcnt:metric key="LT" value="257" />
+        <slcnt:metric key="LS" value="205" />
+        <slcnt:metric key="LI" value="108" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="19" />
+    </slcnt:file>
+    <slcnt:file name="examples/jquery.js">
+        <slcnt:metric key="LT" value="6078" />
+        <slcnt:metric key="LS" value="4354" />
+        <slcnt:metric key="LI" value="1648" />
+        <slcnt:metric key="LC" value="12" />
+        <slcnt:metric key="LM" value="669" />
+    </slcnt:file>
+    <slcnt:info file="examples/databasedump.sql">
+        <![CDATA[examples/databasedump.sql: end of character not found (line 658)]]>
+    </slcnt:info>
+    <slcnt:file name="examples/databasedump.sql">
+        <slcnt:metric key="LT" value="658" />
+        <slcnt:metric key="LS" value="557" />
+        <slcnt:metric key="LI" value="25" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="58" />
+    </slcnt:file>
+    <slcnt:file name="examples/query.py">
+        <slcnt:metric key="LT" value="1479" />
+        <slcnt:metric key="LS" value="1157" />
+        <slcnt:metric key="LI" value="1157" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="144" />
+    </slcnt:file>
+    <slcnt:error file="examples\nest">
+        <![CDATA[examples\nest: can't open; Permission denied]]>
+    </slcnt:error>
+    <slcnt:error file="examples\nest space">
+        <![CDATA[examples\nest space: can't open; Permission denied]]>
+    </slcnt:error>
+    <slcnt:file name="examples\Program.cs">
+        <slcnt:metric key="LT" value="257" />
+        <slcnt:metric key="LS" value="205" />
+        <slcnt:metric key="LI" value="108" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="19" />
+    </slcnt:file>
+    <slcnt:file name="examples\query.py">
+        <slcnt:metric key="LT" value="1479" />
+        <slcnt:metric key="LS" value="1157" />
+        <slcnt:metric key="LI" value="1157" />
+        <slcnt:metric key="LC" value="0" />
+        <slcnt:metric key="LM" value="144" />
+    </slcnt:file>
+    <slcnt:warning file="examples\res_slcnt.ref">
+        <![CDATA[examples\res_slcnt.ref: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:warning file="examples\rt_hd_dsp.asm">
+        <![CDATA[examples\rt_hd_dsp.asm: unknown file extension]]>
+    </slcnt:warning>
+    <slcnt:warning file="examples\rt_hd_rsbch.asm">
+        <![CDATA[examples\rt_hd_rsbch.asm: unknown file extension]]>
+    </slcnt:warning>
+</slcnt:slcnt>
