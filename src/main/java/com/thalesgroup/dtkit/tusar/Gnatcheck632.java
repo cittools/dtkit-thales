@@ -25,13 +25,13 @@ package com.thalesgroup.dtkit.tusar;
 
 import javax.xml.bind.annotation.XmlType;
 
-import com.thalesgroup.dtkit.metrics.model.InputMetricOther;
-import com.thalesgroup.dtkit.metrics.model.InputType;
+import org.jenkinsci.lib.dtkit.model.InputMetricOther;
+import org.jenkinsci.lib.dtkit.model.InputType;
 import com.thalesgroup.dtkit.processor.InputMetric;
 import com.thalesgroup.dtkit.tusar.model.TusarModel;
-import com.thalesgroup.dtkit.util.converter.ConversionException;
-import com.thalesgroup.dtkit.util.validator.ValidationError;
-import com.thalesgroup.dtkit.util.validator.ValidationException;
+import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationError;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
 
 import java.io.File;
 import java.util.List;
@@ -64,7 +64,7 @@ public class Gnatcheck632 extends InputMetricOther {
      * @param inputFile the input file to convert
      * @param outFile   the output file to convert
      * @param params    the xsl parameters
-     * @throws com.thalesgroup.dtkit.util.converter.ConversionException
+     * @throws org.jenkinsci.lib.dtkit.util.converter.ConversionException
      *          an application Exception to throw when there is an error of conversion
      *          The exception is catch by the API client (as Hudson plugin)
      */

@@ -1,7 +1,9 @@
 <!--
 /*******************************************************************************
-* Copyright (c) 2010 Thales Corporate Services SAS                             *
-* Author : Gregory Boissinot                                                   *
+* Copyright (c) 2014 Thales Global Services SAS                                *
+* Author : Aravindan Mahendran                                                 *
+*                                                                              *
+* The MIT license                                                              *
 *                                                                              *
 * Permission is hereby granted, free of charge, to any person obtaining a copy *
 * of this software and associated documentation files (the "Software"), to deal*
@@ -28,15 +30,16 @@
     <modelVersion>4.0.0</modelVersion>
 
    <parent>
-        <groupId>com.thalesgroup.dtkit</groupId>
-        <artifactId>dtkit-metrics-default-parent</artifactId>
-        <version>15</version>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>jenkins</artifactId>
+        <version>1.34</version>
     </parent>
 
+    <groupId>com.thalesgroup.dtkit</groupId>
     <artifactId>dtkit-thales</artifactId>
-    <packaging>dtkit-hudson-hpi</packaging>
+    <packaging>dtkit-jenkins-hpi</packaging>
     <name>DTKIT Default Thales TUSAR Jenkins</name>
-    <version>0.1.7</version>
+    <version>1.0.1</version>
 
     <licenses>
         <license>
@@ -52,7 +55,6 @@
             <email>gbois@dev.java.net</email>
             <timezone>+1</timezone>
             <roles>
-                <role>Project owner</role>
                 <role>Project developer</role>
             </roles>
         </developer>
@@ -70,32 +72,77 @@
                 <role>Project developer</role>
             </roles>
         </developer>
+        <developer>
+            <name>Aravindan Mahendran</name>
+            <timezone>+1</timezone>
+            <roles>
+                <role>Project owner</role>
+                <role>Project developer</role>
+            </roles>
+        </developer>
     </developers>
 
+    <properties>
+        <dtkit.processor.version>1.0.0</dtkit.processor.version>
+        <dtkit.frmk.version>2.0.0</dtkit.frmk.version>
+        <dtkit.plugins.version>1.0.1</dtkit.plugins.version>
+        <dtkit.format.tusar.version>1.0.0</dtkit.format.tusar.version>
+        <junit.version>4.8.2</junit.version>
+        <xmlunit.version>1.3</xmlunit.version>
+        <guice.version>2.0.1</guice.version>
+        <aopalliance.version>1.0</aopalliance.version>
+        <jenkins.version>1.410</jenkins.version>
+        <jaxb2.maven.plugin.version>1.3</jaxb2.maven.plugin.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.thalesgroup.dtkit</groupId>
+                <artifactId>dtkit-processor</artifactId>
+                <version>${dtkit.processor.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.thalesgroup.dtkit</groupId>
+                <artifactId>dtkit-tusar-model</artifactId>
+                <version>${dtkit.format.tusar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jenkins-ci.lib.dtkit</groupId>
+                <artifactId>dtkit-metrics-hudson-api</artifactId>
+                <version>${dtkit.frmk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jenkins-ci.main</groupId>
+                <artifactId>jenkins-core</artifactId>
+                <scope>provided</scope>
+                <version>${jenkins.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
-
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>dtkit</artifactId>
-            <version>1.5</version>
+            <version>2.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.thalesgroup.dtkit</groupId>
             <artifactId>dtkit-processor</artifactId>
-            <version>0.3</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
-            <groupId>com.thalesgroup.dtkit</groupId>
+            <groupId>org.jenkins-ci.lib.dtkit</groupId>
             <artifactId>dtkit-metrics-hudson-api</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.thalesgroup.dtkit</groupId>
             <artifactId>dtkit-tusar-model</artifactId>
-            <version>0.20</version>
         </dependency>
 
         <!-- Used only for compiling the generated Hudson classes -->
@@ -104,10 +151,35 @@
             <artifactId>jenkins-core</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        
         <dependency>
-            <groupId>com.thalesgroup.dtkit</groupId>
-            <artifactId>dtkit-metrics-hudson-api</artifactId>
+            <groupId>org.jenkins-ci.lib.dtkit</groupId>
+            <artifactId>dtkit-metrics-model</artifactId>
+            <version>${dtkit.frmk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xmlunit</groupId>
+            <artifactId>xmlunit</artifactId>
+            <version>${xmlunit.version}</version>
+            <scope>test</scope>
+        </dependency>
+            <dependency>
+            <groupId>com.google.code.guice</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>${aopalliance.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -123,11 +195,28 @@
             </plugin>
 
          <plugin>
-            <groupId>com.thalesgroup.dtkit</groupId>
+            <groupId>org.jenkins-ci.lib.dtkit</groupId>
             <artifactId>dtkit-hudson-maven-plugin</artifactId>
-            <version>0.10</version>
+            <version>1.0.1</version>
             <extensions>true</extensions>
          </plugin>
+         
+         <plugin>
+                <groupId>org.kohsuke.stapler</groupId>
+                <artifactId>maven-stapler-plugin</artifactId>
+                <version>1.7</version>
+                <!-- For Java 7 only -->
+                <!--<dependencies>
+                    <dependency>
+                        <groupId>com.sun</groupId>
+                        <artifactId>tools</artifactId>
+                        <version>1.7</version>
+                        <scope>system</scope>
+                        <systemPath>/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/lib/tools.jar
+                        </systemPath>
+                    </dependency>
+                </dependencies>-->
+            </plugin>
 
 
             <!-- Execute but with no effect for the first compilation time -->

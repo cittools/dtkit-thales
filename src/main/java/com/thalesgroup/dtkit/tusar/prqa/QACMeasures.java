@@ -5,16 +5,17 @@ import java.util.Map;
 
 import javax.xml.bind.annotation.XmlType;
 
-import com.thalesgroup.dtkit.metrics.model.InputMetricOther;
-import com.thalesgroup.dtkit.metrics.model.InputType;
+import org.jenkinsci.lib.dtkit.model.InputMetricOther;
+import org.jenkinsci.lib.dtkit.model.InputType;
 import com.thalesgroup.dtkit.processor.InputMetric;
-import com.thalesgroup.dtkit.util.converter.ConversionException;
-import com.thalesgroup.dtkit.util.validator.ValidationException;
-import com.thalesgroup.dtkit.metrics.model.OutputMetric;
+import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
+import org.jenkinsci.lib.dtkit.model.OutputMetric;
 import com.thalesgroup.dtkit.tusar.model.TusarModel;
 
 @XmlType(name = "QACPPMeasures", namespace = "tusar")
 @InputMetric
+@SuppressWarnings( "serial" )
 public class QACMeasures extends InputMetricOther{
 
 	@Override
@@ -39,7 +40,7 @@ public class QACMeasures extends InputMetricOther{
 
 	@Override
 	public OutputMetric getOutputFormatType() {
-		return TusarModel.OUTPUT_TUSAR_10_0;
+		return TusarModel.OUTPUT_TUSAR_11_0;
 	}
 	
 	/**
@@ -48,7 +49,8 @@ public class QACMeasures extends InputMetricOther{
 	@Override
 	public void convert(File inputFile, File outFile, Map<String, Object> params)
 			throws ConversionException {
-		PRQAParser.convertPRQAMeasures(inputFile, outFile);
+		outFile = PRQAParser.changeOutputFileName(inputFile, outFile);
+		PRQAParser.convertPRQAMeasures(inputFile, outFile, false, false);
 	}
 
 	@Override

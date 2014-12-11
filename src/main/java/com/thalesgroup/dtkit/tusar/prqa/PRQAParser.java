@@ -34,21 +34,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 import com.thalesgroup.dtkit.tusar.prqa.PRQAConstants.PRQAComponentType;
-
-import com.thalesgroup.tusar.measures.v6.MeasuresComplexType;
-import com.thalesgroup.tusar.size.v1.SizeComplexType;
-import com.thalesgroup.tusar.size.v1.SizeComplexType.Resource.Measure;
-import com.thalesgroup.tusar.v10.Tusar;
+import com.thalesgroup.tusar.measures.v7.MeasuresComplexType;
+import com.thalesgroup.tusar.size.v2.SizeComplexType;
+import com.thalesgroup.tusar.size.v2.SizeComplexType.Resource.Measure;
+import com.thalesgroup.tusar.v11.Tusar;
 import com.thalesgroup.tusar.violations.v4.ViolationsComplexType;
 
 /**
- * This class gives utility functions to parse QAC 7.2-R and QACPP 2.5.1-R reports (Text files).
+ * This class gives utility functions to parse QAC 7.2-R and QACPP 3.0-R reports (Text files).
  *
  */
 public class PRQAParser {
@@ -56,21 +57,37 @@ public class PRQAParser {
 
 	public static final String SEPARATOR = ",";
 
-	private static final String TUSAR_VERSION = "10.0";
+	private static final String TUSAR_VERSION = "11.0";
 
 	private static final String TUSAR_XMLNS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
-
 	
+	private static final String FILEPATHREGEX = "====\\s*Source listing for file:\\s*(.+)\\s*====\\s*";
+	private static final String LINEREGEX = "<A NAME=\"ERR_LINE_(\\d+).+";
+	private static final String CHECKMSGREGEX = ".*>Msg\\(.+\\).+";
+	private static final String LEVELNOREGEX = ".*>Msg\\((\\d+):\\d+.+";
+	private static final String MSGNOREGEX = ".*>Msg\\(\\d+:0*(\\d+).+";
+	private static final String MISRAMSGREGEX = ".*(Msg\\(\\d+:\\d+\\).+)";
+	private static final String METRICMSGREGEX = ".*(Msg\\(\\d+:\\d+\\).+)<\\/B>.*";
+	
+	private static final String WORKSPLOCREGEX = "WORKSPACE_LOCATION=(.+)";
+	
+	private static String workspaceLoc;
+	
+	private static final Map<String,String> severityLevels = new HashMap<String, String>();
 
+	private static final Map<String,String> metricTranslations = new HashMap<String, String>();
+	
 	/**
 	 * Maps which convert QACPP / QAC metrics into Sonar Metrics
 	 */
 	private static final Map<String,String> sonarFunctionMetrics = new HashMap<String, String>();
-	private static final Map<String,String> sonarFileMetrics = new HashMap<String, String>();
+	private static final Map<String,String> sonarQACFileMetrics = new HashMap<String, String>();
+	private static final Map<String,String> sonarQACPPFileMetrics = new HashMap<String, String>();
 
 	/* 
 	 * Those lists are actually empty but it could be filled used with future QAC/QACPP releases
 	 */
+	@SuppressWarnings("unused")
 	private static final Map<String,String> sonarClassMetrics = new HashMap<String, String>();
 	private static final Map<String,String> sonarProjectMetrics = new HashMap<String, String>();
 
@@ -95,11 +112,51 @@ public class PRQAParser {
 	private static final List<String> qacFunctionMetrics = new ArrayList<String>();
 
 	static {
+		// Filling Severity info
+		severityLevels.put("0", "INFO");
+		severityLevels.put("1", "INFO");
+		severityLevels.put("2", "MINOR");
+		severityLevels.put("3", "MINOR");
+		severityLevels.put("4", "MAJOR");
+		severityLevels.put("5", "MAJOR");
+		severityLevels.put("6", "CRITICAL");
+		severityLevels.put("7", "CRITICAL");
+		severityLevels.put("8", "BLOCKER");
+		severityLevels.put("9", "BLOCKER");
+		severityLevels.put("99", "BLOCKER");
 
 		//Filling Sonar Maps
 		sonarFunctionMetrics.put(PRQAConstants.STCYC, "FUNCTION_COMPLEXITY");
-		sonarFileMetrics.put(PRQAConstants.STTPP, "LINES");
-		sonarFileMetrics.put(PRQAConstants.STCYC, "COMPLEXITY");
+		
+		//Filling only the QAC metrics needed for sonar 
+		sonarQACFileMetrics.put(PRQAConstants.STPTH, PRQAConstants.PATH);
+		sonarQACFileMetrics.put(PRQAConstants.STGTO, PRQAConstants.GOTO);
+		sonarQACFileMetrics.put(PRQAConstants.STCYC, PRQAConstants.COMPLEXITY);
+		sonarQACFileMetrics.put(PRQAConstants.STM29, PRQAConstants.CALLING);
+		sonarQACFileMetrics.put(PRQAConstants.STCAL, PRQAConstants.CALLS);
+		sonarQACFileMetrics.put(PRQAConstants.STPAR, PRQAConstants.PARAM);
+		sonarQACFileMetrics.put(PRQAConstants.STST3, PRQAConstants.STMT);
+		sonarQACFileMetrics.put(PRQAConstants.STMIF, PRQAConstants.LEVEL);
+		sonarQACFileMetrics.put(PRQAConstants.STM19, PRQAConstants.RETURN);
+		sonarQACFileMetrics.put(PRQAConstants.STNRA, PRQAConstants.STNRA);
+		sonarQACFileMetrics.put(PRQAConstants.COMF, PRQAConstants.COMF);
+		sonarQACFileMetrics.put(PRQAConstants.VOCF, PRQAConstants.VOCF);
+		sonarQACFileMetrics.put(PRQAConstants.STKNT, PRQAConstants.STKNT);
+		
+		//Filling only the QACPP metrics needed for sonar 
+		sonarQACPPFileMetrics.put(PRQAConstants.STPTH, PRQAConstants.PATH);
+		sonarQACPPFileMetrics.put(PRQAConstants.STGTO, PRQAConstants.GOTO);
+		sonarQACPPFileMetrics.put(PRQAConstants.STCYC, PRQAConstants.COMPLEXITY);
+		sonarQACPPFileMetrics.put(PRQAConstants.STPAR, PRQAConstants.PARAM);
+		sonarQACPPFileMetrics.put(PRQAConstants.STXLN, PRQAConstants.STMT);
+		sonarQACPPFileMetrics.put(PRQAConstants.STMIF, PRQAConstants.LEVEL);
+		sonarQACPPFileMetrics.put(PRQAConstants.VOCF, PRQAConstants.VOCF);
+		sonarQACPPFileMetrics.put(PRQAConstants.STDIT, PRQAConstants.DIT);
+		sonarQACPPFileMetrics.put(PRQAConstants.STNOP, PRQAConstants.NOP);
+		sonarQACPPFileMetrics.put(PRQAConstants.STWMC, PRQAConstants.WMC);
+		sonarQACPPFileMetrics.put(PRQAConstants.STLCM, PRQAConstants.lcom4);
+		sonarQACPPFileMetrics.put(PRQAConstants.STCBO, PRQAConstants.CBO);
+		sonarQACPPFileMetrics.put(PRQAConstants.STKNT, PRQAConstants.STKNT);
 
 		//Filling the QACPP file metrics list
 		qacppFileMetrics.add(PRQAConstants.STTPP); //Total unpreprocessed source lines
@@ -135,6 +192,8 @@ public class PRQAParser {
 		qacppFunctionMetrics.add(PRQAConstants.STPTH); //Estimated static path count
 		qacppFunctionMetrics.add(PRQAConstants.STMIF); //Maximum nesting of control structures
 		qacppFunctionMetrics.add(PRQAConstants.STLIN); //Number of maintainable lines of code
+		qacppFunctionMetrics.add(PRQAConstants.VOCF); //Halstead distinct operands
+		qacppFunctionMetrics.add(PRQAConstants.COMF); //Halstead distinct operands
 
 
 		//Filling the QAC project metrics list
@@ -197,7 +256,7 @@ public class PRQAParser {
 		qacFunctionMetrics.add(PRQAConstants.STM07); //Essential Cyclomatic Complexity
 		qacFunctionMetrics.add(PRQAConstants.STM19); //Number of Exit Points
 		qacFunctionMetrics.add(PRQAConstants.STM29); //Number of Functions Calling this Function
-		qacFunctionMetrics.add(PRQAConstants.STMCC); //Myer’s Interval
+		qacFunctionMetrics.add(PRQAConstants.STMCC); //Myer?s Interval
 		qacFunctionMetrics.add(PRQAConstants.STMIF); //Maximum Nesting of Control Structures
 		qacFunctionMetrics.add(PRQAConstants.STPAR); //Number of Function Parameters
 		qacFunctionMetrics.add(PRQAConstants.STPBG); //Path-Based Residual Bug Estimate
@@ -211,6 +270,9 @@ public class PRQAParser {
 		qacFunctionMetrics.add(PRQAConstants.STUNR); //Number of Unreachable Statements
 		qacFunctionMetrics.add(PRQAConstants.STUNV); //Number of Unused and Non-Reused Variables
 		qacFunctionMetrics.add(PRQAConstants.STXLN); //Number of Executable Lines
+		qacFunctionMetrics.add(PRQAConstants.VOCF);
+		qacFunctionMetrics.add(PRQAConstants.COMF);
+		
 	}
 
 
@@ -227,42 +289,30 @@ public class PRQAParser {
 		
 		parseViolations(input, violationsPerFiles);
 
-		Tusar tusarV10 = new Tusar();
-		tusarV10.setVersion(TUSAR_VERSION);
-		tusarV10.setXmlnsXsi(TUSAR_XMLNS_XSI);
+		Tusar tusarV11 = new Tusar();
+		tusarV11.setVersion(TUSAR_VERSION);
+		tusarV11.setXmlnsXsi(TUSAR_XMLNS_XSI);
 
 		ViolationsComplexType violationsComplexType = new ViolationsComplexType();
+		violationsComplexType.setToolname(prqaType);
 
 		for (String key : violationsPerFiles.keySet() ){
 			ViolationsComplexType.File file = new ViolationsComplexType.File();
 			file.setPath(key);
 			for (String[] violationsValues : violationsPerFiles.get(key)){
 				ViolationsComplexType.File.Violation violation = new ViolationsComplexType.File.Violation();
-				violation.setSeverity(violationsValues[PRQAConstants.SEVERITY_INDEX]);
-				violation.setKey(prqaType+"_"+violationsValues[PRQAConstants.VIOLATION_ID_INDEX]);
+				violation.setSeverity(violationsValues[PRQAConstants.SEVERITY]);
+				violation.setKey(prqaType+"_"+violationsValues[PRQAConstants.MESSAGE_INDEX]);
 				violation.setLine(violationsValues[PRQAConstants.LINE_INDEX]);
-				violation.setColumn(violationsValues[PRQAConstants.COLUMN_INDEX]);
-				/**
-				 * The violation message in QAC file can contain the separator value, so we check the length of the array and we concatenate the last values of the array.
-				 */
-				if (violationsValues.length != PRQAConstants.MESSAGE_INDEX+1){
-					StringBuilder sb = new StringBuilder();
-					for (int i=PRQAConstants.MESSAGE_INDEX; i<violationsValues.length;i++){
-						sb.append(violationsValues[i]).append(SEPARATOR+" ");
-					}
-					sb.setLength(sb.length()-2);
-					violation.setMessage(sb.toString());
-				}
-				else {
-					violation.setMessage(violationsValues[PRQAConstants.MESSAGE_INDEX]);
-				}
+				violation.setMessage(violationsValues[PRQAConstants.MESSAGE]);
 				file.getViolation().add(violation);
 			}
 			violationsComplexType.getFile().add(file);
 		}
-		tusarV10.setViolations(violationsComplexType);
+		tusarV11.setViolations(violationsComplexType);
+		tusarV11.setVersion("11");
 		try {
-			marshal(tusarV10, output);
+			marshal(tusarV11, output);
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
@@ -276,42 +326,136 @@ public class PRQAParser {
 	 */
 	private static void parseViolations(File input, Map<String, List<String[]>> violationsPerFiles) throws FileNotFoundException{
 		Scanner scanner = new Scanner(input);
+		// 0 : File path
+		// 1 : Line index
+		// 2 : Level nr index
+		// 3 : Message nr 
+		// 4 : Message Description
+		// 5 : Severity
+		String[] violationData = new String [6];
+		violationData[PRQAConstants.LINE_INDEX + 1] = "1"; // for initial file warnings
 		while (scanner.hasNextLine()){
 			String line = scanner.nextLine().trim();
 			if (!line.isEmpty()){
-				//0 : File path, 1 : Severity , 2 : Violation id, 3 : Line, 4 (useful ?) : Column 
-				String[] values = line.split(SEPARATOR);
-
-				//0 : Severity , 1 : Violation id, 2 : Line, 3 (useful ?) : Column 
-				String[] violationsValues = new String[values.length-1];
-				for (int i =1;i<values.length;i++){
-					violationsValues[i-1] = values[i].trim();
+				//Storing data
+				Pattern p = Pattern.compile(FILEPATHREGEX);
+				Matcher m = p.matcher(line);
+				if (m.matches())
+				{
+					violationData[0] = extractFilePath(m.group(1));
 				}
-				if (violationsPerFiles.get(values[0]) == null){
-					List<String[]> list = new ArrayList<String[]>();
-					list.add(violationsValues);
-					violationsPerFiles.put(values[0], list);
+				p = Pattern.compile(LINEREGEX);
+				m = p.matcher(line);
+				if (m.matches())
+				{	
+					violationData[PRQAConstants.LINE_INDEX + 1] = m.group(1);
 				}
-				else {
-					violationsPerFiles.get(values[0]).add(violationsValues);
+				
+				
+				if (Pattern.matches(CHECKMSGREGEX, line)){
+					p = Pattern.compile(LEVELNOREGEX);
+					m = p.matcher(line);
+					if (m.matches()){
+						violationData[PRQAConstants.SEVERITY_INDEX + 1] = m.group(1);
+						violationData[PRQAConstants.SEVERITY + 1] = severityLevels.get(violationData[PRQAConstants.SEVERITY_INDEX + 1]);
+					}
+					
+					p = Pattern.compile(MSGNOREGEX);
+					m = p.matcher(line);
+					if (m.matches()){
+						violationData[PRQAConstants.MESSAGE_INDEX + 1] = m.group(1);
+					}
+					p = Pattern.compile(METRICMSGREGEX);
+					m = p.matcher(line);
+					if (m.matches()){
+						violationData[PRQAConstants.MESSAGE + 1] = m.group(1);
+					}
+					else
+					{
+						p = Pattern.compile(MISRAMSGREGEX);
+						m = p.matcher(line);
+						if (m.matches()){
+							violationData[PRQAConstants.MESSAGE + 1] = m.group(1);
+						}
+					}
+					
+					String[] violationsValues = new String[violationData.length-1];
+					for (int i =1;i<violationData.length;i++){
+						violationsValues[i-1] = violationData[i].trim();
+					}
+					
+					if (violationsPerFiles.get(violationData[0].trim()) == null){
+						List<String[]> list = new ArrayList<String[]>();
+						list.add(violationsValues);
+						violationsPerFiles.put(violationData[0].trim(), list);
+					}
+					else {
+						violationsPerFiles.get(violationData[0].trim()).add(violationsValues);
+					}
 				}
+				
+				
 			}
 		}
 		scanner.close();
 	}
+
+	private static String extractFilePath(String detectedPath/*, File input*/) {
+		/*if (workspaceLoc == null)
+			initialiseProperties();*/
+		
+		if (workspaceLoc == null)
+			return detectedPath;
+		if (detectedPath.startsWith(workspaceLoc))
+			return detectedPath.replaceFirst(workspaceLoc, "");
+		else 
+			return detectedPath ;
+	}
+
+	/*private static void initialiseProperties() {
+		if (workspaceLoc != null) return;
+		//workspaceLoc = "/cc/l905/products/im-sar/";
+		Scanner scanner = null;
+		try {
+			scanner = new Scanner(new File("/tmp/.properties"));
+		} catch (FileNotFoundException e) {
+			//e.printStackTrace();
+		}
+		if (scanner == null) return;
+		while (scanner.hasNextLine()){
+			String line = scanner.nextLine().trim();
+			if (!line.isEmpty()){
+				Pattern p = Pattern.compile(WORKSPLOCREGEX);
+				Matcher m = p.matcher(line);
+				if (m.matches())
+				{
+					workspaceLoc = m.group(1);
+				}
+			}
+		}
+		scanner.close();
+	}*/
 
 	/**
 	 * Read lines of the given input file (.met file) and fill the two given maps
 	 * @param inputFile a .met file
 	 * @param metrics An empty map. Metrics per components (Key : component name / Value : List(Key : Metric Name / Value : Metric Value))
 	 * @param fileComponents An empty map. Components of a file (Key : File Name, Value : Set of components)
+	 * @param useHeaders a boolean
 	 * @throws FileNotFoundException
 	 */
-	private static void treatCSVMeasures(File inputFile, Map<String, Map<String,String>> metrics, Map<String, Set<String>> fileComponents) throws FileNotFoundException{
+	private static void treatCSVMeasures(File inputFile, Map<String, Map<String,String>> metrics, Map<String, Set<String>> fileComponents, boolean useHeaders) throws FileNotFoundException{
+		String headerFileName = null;
+		if (useHeaders && (inputFile.getName().endsWith(".h.met") || inputFile.getName().endsWith(".hpp.met") ||
+				inputFile.getName().endsWith(".ipp.met")))
+		{
+			headerFileName = getHeaderFileName(inputFile);
+		}
 		Scanner scanner = new Scanner(inputFile);
 
 		//Getting the index of the column
-
+		boolean ignoreHeaderFunctions = false;
+		boolean unnamedFunction = false;
 		String fileName = "";
 		String currentComponentName = ""; //Class, Function...
 
@@ -330,24 +474,139 @@ public class PRQAParser {
 						if (fileName.startsWith("\"")){
 							fileName = new StringBuilder(fileName).substring(1,fileName.length()-1);
 						}
+						fileName = extractFilePath (fileName);
+						if (useHeaders && (inputFile.getName().endsWith(".h.met") || inputFile.getName().endsWith(".hpp.met") ||
+								inputFile.getName().endsWith(".ipp.met")))
+						{	
+							if (headerFileName != null && headerFileName.matches(fileName))
+							{
+								ignoreHeaderFunctions = false;
+							}
+							else
+								ignoreHeaderFunctions = true;
+							
+						}
+							
+						if (useHeaders && inputFile.getName().endsWith(".cpp.met"))
+						{
+							if (fileName.endsWith(".h") || fileName.endsWith(".hpp") ||
+									fileName.endsWith(".ipp"))
+								ignoreHeaderFunctions = true;
+							else
+								ignoreHeaderFunctions = false;
+						}	
 					}
 					else if (PRQAConstants.STNAM.equals(key) ){ //We suppose that STFIL always appears before STNAM...
 						Map<String, String> values = metrics.get(key);
-						if (values == null){
-							values = new HashMap<String, String>();
-							metrics.put(value, values);
+						value = extractFilePath (value);
+						unnamedFunction = value.startsWith("::@");
+						if (!ignoreHeaderFunctions  && !unnamedFunction)
+						{
+							if (values == null){
+								values = new HashMap<String, String>();
+								metrics.put(value, values);
+							}
+	
+							Set<String> parts = fileComponents.get(fileName);
+							if (parts==null){
+								parts = new HashSet<String>();
+								fileComponents.put(fileName, parts);
+							}
+							parts.add(value);
 						}
-
-						Set<String> parts = fileComponents.get(fileName);
-						if (parts==null){
-							parts = new HashSet<String>();
-							fileComponents.put(fileName, parts);
-						}
-						parts.add(value);
 						currentComponentName = value;
 					}
 					else {
-						metrics.get(currentComponentName).put(key, value);
+						if (!ignoreHeaderFunctions && !unnamedFunction )
+						{
+							String metricName = metricTranslations.get(key);
+							
+							if (metricName == null) metricName = key;
+							
+							Map<String, String> currentComponentMap = metrics.get(currentComponentName);
+							currentComponentMap.put(key, value);
+							//metrics.get(currentComponentName).put(key, value);
+							
+							
+							/*if (metrics.get(currentComponentName).containsKey(PRQAConstants.STTOT) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STOPT) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STOPN) )
+							{
+								if (Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPT)) + 
+										Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPN)) != 0)
+								{
+									metrics.get(currentComponentName).put(PRQAConstants.VOCF,
+											(Float.toString(Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STTOT)) / 
+													(Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPT)) + 
+															Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPN))) )));
+								}
+							}*/
+							String sttot = currentComponentMap.get(PRQAConstants.STTOT);
+							String stopt = currentComponentMap.get(PRQAConstants.STOPT);
+							String stopn = currentComponentMap.get(PRQAConstants.STOPN);
+							if (sttot!=null && stopt!=null && stopn!=null)
+							{
+								if (Float.parseFloat(stopt) + Float.parseFloat(stopn) != 0)
+								{
+									currentComponentMap.put(PRQAConstants.VOCF,
+											(Float.toString(Float.parseFloat(sttot) / 
+													(Float.parseFloat(stopt) + 
+															Float.parseFloat(stopn)) )));
+								}
+							}
+							
+							/*if (metrics.get(currentComponentName).containsKey(PRQAConstants.STM21) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STM22) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STOPT) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STOPN) )
+							{
+								if (Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPT)) + 
+										Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPN)) != 0)
+								{
+									metrics.get(currentComponentName).put(PRQAConstants.VOCF,
+											(Float.toString((Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STM21)) + 
+													Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STM22))) / 
+													(Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPT)) + 
+															Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STOPN))) )));
+								}
+							}*/
+							
+							String stm21 = currentComponentMap.get(PRQAConstants.STM21);
+							String stm22 = currentComponentMap.get(PRQAConstants.STM22);
+							if (stm21!=null && stm22!=null && stopt != null && 
+									stopn!=null )
+							{
+								if (Float.parseFloat(stopt) + Float.parseFloat(stopn) != 0)
+								{
+									currentComponentMap.put(PRQAConstants.VOCF,
+											(Float.toString((Float.parseFloat(stm21) + 
+													Float.parseFloat(stm22)) / 
+													(Float.parseFloat(stopt) + 
+															Float.parseFloat(stopn)) )));
+								}
+							}
+							
+							/*if (metrics.get(currentComponentName).containsKey(PRQAConstants.STM28) && 
+									metrics.get(currentComponentName).containsKey(PRQAConstants.STTPP) )
+							{
+								if (Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STTPP)) != 0)
+								{
+									metrics.get(currentComponentName).put(PRQAConstants.COMF,
+										Float.toString((Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STM28)) /
+											Float.parseFloat(metrics.get(currentComponentName).get(PRQAConstants.STTPP))) ));
+								}
+							}*/
+							
+							String stm28 = currentComponentMap.get(PRQAConstants.STM28);
+							String sttpp = currentComponentMap.get(PRQAConstants.STTPP);
+							if (stm28!=null && sttpp!=null )
+							{
+								if (Float.parseFloat(sttpp) != 0)
+								{
+									currentComponentMap.put(PRQAConstants.COMF, Float.toString((Float.parseFloat(stm28) / Float.parseFloat(sttpp)) ));
+								}
+							}
+						}
 					}
 				}
 			}
@@ -355,6 +614,44 @@ public class PRQAParser {
 		}
 		scanner.close();
 
+	}
+
+	private static String getHeaderFileName(File inputFile) throws FileNotFoundException{
+		Scanner scanner = new Scanner(inputFile);
+
+		String fileName = "";
+
+		while (scanner.hasNextLine()){
+			String line = scanner.nextLine();
+			String lineMarkUp = "<S>";
+			if (line.startsWith(lineMarkUp)){
+				line = line.substring(lineMarkUp.length(), line.length()).trim();
+				int indexOfFirstWhiteSpace = line.indexOf(' ');
+				if (indexOfFirstWhiteSpace!=-1){
+					String key = line.substring( 0, indexOfFirstWhiteSpace).trim();
+					String value = line.substring(indexOfFirstWhiteSpace+1, line.length()).trim(); 
+					if (PRQAConstants.STFIL.equals(key)){
+						fileName = value;
+						//If the filename starts and ends with a quote, delete them
+						if (fileName.startsWith("\"")){
+							fileName = new StringBuilder(fileName).substring(1,fileName.length()-1);
+						}
+						fileName = extractFilePath (fileName);
+					}
+					else if (PRQAConstants.STNAM.equals(key) ){ //We suppose that STFIL always appears before STNAM...
+						value = extractFilePath (value);
+						if (value.matches(fileName))
+						{
+							scanner.close();
+							return fileName;
+						}
+					}
+				}
+			}
+
+		}
+		scanner.close();
+		return null;
 	}
 
 	/**
@@ -401,12 +698,14 @@ public class PRQAParser {
 		Map<String, Map<String,String>> metricsPerFile = new HashMap<String, Map<String,String>>();
 		for (String fileName : fileComponents.keySet()){
 			Map<String, String> additionnedMetrics = new HashMap<String, String>();
+			Map<String, String> totaledMetrics = new HashMap<String, String>();
 			for(String components : fileComponents.get(fileName)){
 				Map<String, String> metricsOfComponent = metrics.get(components);
-				PRQAComponentType componentType = getComponentType(metricsOfComponent);
+				PRQAComponentType componentType = getComponentType(components, fileName);
 				switch(componentType){
 				case QACPP_FILE :
 				case QAC_FILE :
+				case FILE :
 					for (String metricName : metricsOfComponent.keySet()){
 						additionnedMetrics.put(metricName, metricsOfComponent.get(metricName));
 					}
@@ -416,14 +715,13 @@ public class PRQAParser {
 				case QACPP_CLASS :
 				case QACPP_CLASS2 :
 				case QAC_FUNCTION :
+				case FUNCTION :
 					for (String metricName : metricsOfComponent.keySet()){
 						try{
-							Double sum = additionnedMetrics.get(metricName) == null ? 0:Double.parseDouble(additionnedMetrics.get(metricName));
-							additionnedMetrics.put(metricName, Double.toString(sum+Double.parseDouble(metricsOfComponent.get(metricName))));
+							Float sum = totaledMetrics.get(metricName) == null ? 0:Float.parseFloat(totaledMetrics.get(metricName));
+							totaledMetrics.put(metricName, Float.toString( sum + Float.parseFloat(metricsOfComponent.get(metricName))));
 						}catch (NumberFormatException e) {
-							/*String currentMetricValue = additionnedMetrics.get(metricName);
-							additionnedMetrics.put(metricName, currentMetricValue==null?metricsOfComponent.get(metricName):currentMetricValue+"/"+metricsOfComponent.get(metricName));*/
-							additionnedMetrics.put(metricName, metricsOfComponent.get(metricName));
+							totaledMetrics.put(metricName, metricsOfComponent.get(metricName));
 						}
 					}
 					break;
@@ -433,6 +731,26 @@ public class PRQAParser {
 
 				}
 			}
+			
+			int noFunctions = fileComponents.get(fileName).size() - 1;
+			if (noFunctions > 0)
+				for (String addedMetric: totaledMetrics.keySet())
+				{
+					if (addedMetric.matches(PRQAConstants.STCYC))
+						additionnedMetrics.put(addedMetric, totaledMetrics.get(addedMetric));
+					else
+					{	
+						try
+						{
+							Float average = Float.parseFloat(totaledMetrics.get(addedMetric)) / noFunctions;
+							additionnedMetrics.put(addedMetric, Float.toString(average));
+						}
+						catch (NumberFormatException ex)
+						{
+							//ex.printStackTrace();
+						}
+					}
+				}
 			if (!additionnedMetrics.isEmpty()){
 				metricsPerFile.put(fileName, additionnedMetrics);
 			}
@@ -446,7 +764,7 @@ public class PRQAParser {
 	 * @param tusar The XML Node representing a TUSAR Node
 	 * @param projectMetrics Map : Key : file name / Value : List(Key : Metric Name / Value : Metric Value)
 	 */
-	private static void addFileMeasuresIntoTusar(Tusar tusar, Map<String, Map<String,String>> metricsPerFile){
+	private static void addFileMeasuresIntoTusar(Tusar tusar, Map<String, Map<String,String>> metricsPerFile, boolean isQACPP){
 
 		SizeComplexType sizeComplexType = tusar.getMeasures().getSize();
 
@@ -460,10 +778,24 @@ public class PRQAParser {
 
 			for (String metricName : metricsComponent.keySet()){
 				Measure measure = new Measure();
-				String sonarMetricName = sonarFileMetrics.get(metricName);
-				measure.setKey(sonarMetricName==null?metricName:sonarMetricName);
+				String sonarMetricName;
+				if (isQACPP)
+				{
+					sonarMetricName = sonarQACPPFileMetrics.get(metricName);
+				}
+				else{
+					sonarMetricName = sonarQACFileMetrics.get(metricName);
+				}
+				if (sonarMetricName==null){
+					sonarMetricName = metricName;
+				}
+				//if (sonarMetricName != null)
+				//{
+				measure.setKey(sonarMetricName);
 				measure.setValue(metricsComponent.get(metricName));
 				resource.getMeasure().add(measure);
+				//}
+				
 			}
 
 
@@ -534,6 +866,12 @@ public class PRQAParser {
 			return PRQAComponentType.UNKNOWN;
 		}
 	}
+	
+	private static PRQAComponentType getComponentType(String components, String fileName) {
+		if (components.matches(fileName))
+			return PRQAComponentType.FILE;
+		else return PRQAComponentType.FUNCTION;
+	}
 
 	/**
 	 * Convert a TUSAR node into a TUSAR report
@@ -542,8 +880,8 @@ public class PRQAParser {
 	 * @throws JAXBException
 	 */
 	private static void marshal(Object node, File outputFile) throws JAXBException{
-		ClassLoader cl = com.thalesgroup.tusar.v10.ObjectFactory.class.getClassLoader();
-		JAXBContext jc = JAXBContext.newInstance("com.thalesgroup.tusar.v10",cl);
+		ClassLoader cl = com.thalesgroup.tusar.v11.ObjectFactory.class.getClassLoader();
+		JAXBContext jc = JAXBContext.newInstance("com.thalesgroup.tusar.v11",cl);
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
 		m.marshal(node, outputFile);
@@ -554,33 +892,29 @@ public class PRQAParser {
 	 * @param file The directory containing the .met files
 	 * @param outputTusar The TUSAR file the will be generated
 	 */
-	public static void convertPRQAMeasures(File file, File outputTusar){
+	public static void convertPRQAMeasures(File file, File outputTusar, boolean isQACPP, boolean useHeaders){
 
-		Tusar tusarV10 = new Tusar();
+		Tusar tusarV11 = new Tusar();
 		MeasuresComplexType measuresComplexType = new MeasuresComplexType();
 		SizeComplexType sizeComplexType = new SizeComplexType();
 		measuresComplexType.setSize(sizeComplexType);
-		tusarV10.setMeasures(measuresComplexType);
+		tusarV11.setMeasures(measuresComplexType);
+		tusarV11.setVersion("11");
 
 		Map<String, Map<String,String>> metrics = new HashMap<String, Map<String,String>>(); //Key : function/class/filename, Value : map of metrics (name + value)
 		Map<String, Set<String>> fileComponents = new HashMap<String, Set<String>>(); //Key : filename, Value : set of function/class/filename
 
-		//convertAllMetFiles(inputDir, metrics, fileComponents);
-		convertMetFile(file, metrics, fileComponents);
+		convertMetFile(file, metrics, fileComponents, useHeaders);
 		
-		/*
-		 * TODO : These functions (getMetricsPerFile, getProjectMetrics...) are time consuming, we could use a map to store the prqa component types and use them in these functions.
-		 */
 		Map<String, Map<String,String>> metricsPerFile = getMetricsPerFile(metrics, fileComponents);
 		Map<String, Map<String,String>> projectMetrics = getProjectMetrics(metrics, fileComponents);
 
 
-		addFileMeasuresIntoTusar(tusarV10, metricsPerFile);
-		addPRQAProjectMeasuresIntoTusar(tusarV10, projectMetrics);
-
-
+		addFileMeasuresIntoTusar(tusarV11, metricsPerFile, isQACPP);
+		addPRQAProjectMeasuresIntoTusar(tusarV11, projectMetrics);
+ 
 		try {
-			marshal(tusarV10, outputTusar);
+			marshal(tusarV11, outputTusar);
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
@@ -591,36 +925,38 @@ public class PRQAParser {
 	 * @param metrics An empty Map (filled by this function)
 	 * @param fileComponents An empty Map (filled by this function)
 	 */
-	private static void convertMetFile(File file, Map<String, Map<String,String>> metrics, Map<String, Set<String>> fileComponents){
-		if (file!=null && file.isFile() && file.getName().endsWith(".met")){
-			try {
-				treatCSVMeasures(file, metrics, fileComponents);
+	private static void convertMetFile(File file, Map<String, Map<String,String>> metrics, Map<String, Set<String>> fileComponents, boolean useHeaders){
+		if (file!=null && file.isFile() && file.getName().endsWith(".met")){ //Met files
+			try {				
+				treatCSVMeasures(file, metrics, fileComponents, useHeaders);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
+		else if (file!=null && file.isDirectory())
+		{ //Met directories
+			for (File metFile : file.listFiles()){
+				if (metFile.getName().endsWith(".met"))
+				{
+					try {
+						treatCSVMeasures(metFile, metrics, fileComponents, useHeaders);
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+				else{
+					System.err.println("WARNING : " + metFile.getAbsolutePath()+ " is not a .met file, it won't be analysed.");
+				}
+			}
+		}
 		else{
-			//TODO : LOGGER !
-			System.err.println("WARNING : " + file.getAbsolutePath()+ " is not a .met file, it won't be analysed.");
+			System.err.println("WARNING : " + file.getAbsolutePath()+ " is not a .met file or a directory, it won't be analysed.");
 		}
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
-		//convertQACPPIntoViolations(new File ("I:\\tmp\\aravindan\\prqa\\qacpp\\outputqacpp.txt"), new File("D:\\outputtusar.xml") );
-		//parseCSVMeasuresFunc(new File("I:\\tmp\\aravindan\\prqa\\QAC-test\\output\\Cgicc.cpp.met"));
-		//treatCSVMeasures(new File("I:\\tmp\\aravindan\\prqa\\QAC-test\\Cgicc\\output\\Cgicc.cpp.met"));
-		//treatCSVMeasures(new File("I:\\tmp\\aravindan\\prqa\\QAC-test\\output_dlg\\char_and_strings.c.met"));
-		
-		
-		
-		//convertPRQAMeasures(new File("I:\\tmp\\aravindan\\prqa\\QAC-test\\output_dlg"), new File("D:/tusar-prqa.xml"));
-		//convertPRQAMeasures(new File("I:\\tmp\\aravindan\\prqa\\QAC-test\\Cgicc\\Output"), new File("D:/tusar-prqa.xml"));
-		
-		File inputDir = new File("I:\\integ_infos\\AMA\\prqa\\QAC-test\\Cgicc\\Output");
-		int i = 0;
-		for (File file : inputDir.listFiles()){
-			i++;
-			convertPRQAMeasures(file, new File("D:/prqa-results/tusar-prqa"+i+".xml"));
-		}
+	public static File changeOutputFileName(File inputFile, File outFile) {
+		String fileName = outFile.getParent().concat("/").concat(inputFile.getName().substring(0, inputFile.getName().lastIndexOf("."))).concat(".xml");
+		return new File(fileName);
 	}
+
 }

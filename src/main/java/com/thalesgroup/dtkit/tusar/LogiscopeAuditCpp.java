@@ -28,13 +28,13 @@ import java.util.Map;
 
 import javax.xml.bind.annotation.XmlType;
 
-import com.thalesgroup.dtkit.metrics.model.InputMetricOther;
-import com.thalesgroup.dtkit.metrics.model.InputType;
-import com.thalesgroup.dtkit.metrics.model.OutputMetric;
+import org.jenkinsci.lib.dtkit.model.InputMetricOther;
+import org.jenkinsci.lib.dtkit.model.InputType;
+import org.jenkinsci.lib.dtkit.model.OutputMetric;
 import com.thalesgroup.dtkit.processor.InputMetric;
 import com.thalesgroup.dtkit.tusar.model.TusarModel;
-import com.thalesgroup.dtkit.util.converter.ConversionException;
-import com.thalesgroup.dtkit.util.validator.ValidationException;
+import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
 
 @XmlType(name = "LogiscopeAuditCpp", namespace = "tusar")
 @InputMetric

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Thales Corporate Services SAS                             *
+ * Copyright (c) 2012 Thales Global Services SAS                                *
  * Author : Aravindan Mahendran                                                 *
  *                                                                              *
  * The MIT license.                                                             *
@@ -23,74 +23,80 @@
  * THE SOFTWARE.                                                                *
  *******************************************************************************/
 
-package com.thalesgroup.dtkit.tusar.prqa;
+package com.thalesgroup.dtkit.tusar.ncover;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import org.jenkinsci.lib.dtkit.model.InputMetricOther;
 import org.jenkinsci.lib.dtkit.model.InputType;
 import com.thalesgroup.dtkit.processor.InputMetric;
-import com.thalesgroup.dtkit.tusar.prqa.PRQAParser;
-import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
-import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
-import org.jenkinsci.lib.dtkit.model.OutputMetric;
 import com.thalesgroup.dtkit.tusar.model.TusarModel;
+import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationError;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
 
-@XmlType(name = "QACPPViolations", namespace = "tusar")
+
+
+@XmlType(name = "NCover", namespace = "tusar")
 @InputMetric
-@SuppressWarnings( "serial" )
-public class QACPPViolations extends InputMetricOther{
-	
+public class NCover extends InputMetricOther {
 	@Override
-	public InputType getToolType() {
-		return InputType.VIOLATION;
-	}
+    public InputType getToolType() {
+        return InputType.COVERAGE;
+    }
 
-	@Override
-	public void convert(File inputFile, File outFile, Map<String, Object> params)
-			throws ConversionException {
-		try {
-			outFile = PRQAParser.changeOutputFileName(inputFile, outFile);
-			PRQAParser.convertPRQAViolationsIntoTusar("qacpp",inputFile, outFile);
-		} catch (FileNotFoundException e) {
+    @Override
+    public String getToolName() {
+        return "NCover";
+    }
+
+    @Override
+    public String getToolVersion() {
+        return "1.5.8";
+    }
+
+    @Override
+    public boolean isDefault() {
+        return true;
+    }
+
+    @Override
+    public void convert(File inputFile, File outFile, Map<String, Object> params) throws ConversionException {
+    	NCoverConvertor nCoverConvertor = new NCoverConvertor();
+    	try {
+			nCoverConvertor.convert(inputFile, outFile);
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@Override
-	public String getToolName() {
-		return "QACPP";
-	}
+    }
 
-	@Override
-	public String getToolVersion() {
-		return "3.0-R";
-	}
-
-	@Override
-	public boolean isDefault() {
-		return true;
-	}
-
-	@Override
-	public OutputMetric getOutputFormatType() {
-		return TusarModel.OUTPUT_TUSAR_11_0;
-	}
+    /*
+     *  Gives the validation process for the output file
+     *
+     * @return true if the input file is valid, false otherwise
+     */
+    @Override
+    public boolean validateOutputFile(File inputXMLFile) throws ValidationException {
+        List<ValidationError> errors = TusarModel.OUTPUT_TUSAR_10_0.validate(inputXMLFile);
+        this.setOutputValidationErrors(errors);
+        return errors.isEmpty();
+    }
 
 	@Override
 	public boolean validateInputFile(File inputXMLFile)
 			throws ValidationException {
 		return true;
 	}
-
-	@Override
-	public boolean validateOutputFile(File inputXMLFile)
-			throws ValidationException {
-		return true;
-	}
-
 }

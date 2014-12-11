@@ -1,3 +1,28 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Thales Corporate Services SAS                             *
+ * Author : Aravindan Mahendran                                                 *
+ *                                                                              *
+ * The MIT license                                                              *
+ *                                                                              *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy *
+ * of this software and associated documentation files (the "Software"), to deal*
+ * in the Software without restriction, including without limitation the rights *
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell    *
+ * copies of the Software, and to permit persons to whom the Software is        *
+ * furnished to do so, subject to the following conditions:                     *
+ *                                                                              *
+ * The above copyright notice and this permission notice shall be included in   *
+ * all copies or substantial portions of the Software.                          *
+ *                                                                              *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR   *
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,     *
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  *
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER       *
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,*
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN    *
+ * THE SOFTWARE.                                                                *
+ *******************************************************************************/
+
 package com.thalesgroup.dtkit.tusar.prqa;
 
 public class PRQAConstants {
@@ -6,7 +31,7 @@ public class PRQAConstants {
 	 * Common
 	 */
 	public static enum PRQAComponentType {
-		QACPP_FILE, QACPP_CLASS, QACPP_CLASS2, QACPP_FUNCTION, QAC_PROJECT, QAC_FILE, QAC_FUNCTION, UNKNOWN
+		QACPP_FILE, QACPP_CLASS, QACPP_CLASS2, QACPP_FUNCTION, QAC_PROJECT, QAC_FILE, QAC_FUNCTION, FILE, FUNCTION, UNKNOWN
 	}
 	
 	/**
@@ -53,11 +78,11 @@ public class PRQAConstants {
 	
 	
 	//Columns for the violations
-	public static final int SEVERITY_INDEX = 0;
-	public static final int VIOLATION_ID_INDEX = 1;
-	public static final int LINE_INDEX = 2;
-	public static final int COLUMN_INDEX = 3;
-	public static final int MESSAGE_INDEX = 4;
+	public static final int LINE_INDEX = 0;
+	public static final int SEVERITY_INDEX = 1;
+	public static final int SEVERITY = 2;
+	public static final int MESSAGE_INDEX = 3;
+	public static final int MESSAGE = 4;
 	
 	
 	
@@ -85,7 +110,7 @@ public class PRQAConstants {
 	public static final String STM07 ="STM07"; //Essential Cyclomatic Complexity
 	public static final String STM19 ="STM19"; //Number of Exit Points
 	public static final String STM29 ="STM29"; //Number of Functions Calling this Function
-	public static final String STMCC ="STMCC"; //Myer’s Interval
+	public static final String STMCC ="STMCC"; //Myer?s Interval
 	//public static final String STMIF ="STMIF"; //Maximum Nesting of Control Structures
 	//public static final String STPAR ="STPAR"; //Number of Function Parameters
 	public static final String STPBG ="STPBG"; //Path-Based Residual Bug Estimate
@@ -147,5 +172,25 @@ public class PRQAConstants {
 	public static final String STNEA ="STNEA"; //Number of Entry Points Across Project
 	public static final String STNFA ="STNFA"; //Number of Functions Across Project
 	public static final String STCYA ="STCYA"; //Cyclomatic Complexity Across Project
+	
+	//Metrics used in Sonar
+	
+	public static final String PATH ="PATH";		// replaces STPTH
+	public static final String GOTO ="GOTO";		// replaces STGTO
+	public static final String COMPLEXITY ="COMPLEXITY";	// replaces STCYC
+	public static final String CALLING ="CALLING";	// replaces STM29
+	public static final String CALLS ="CALLS";		// replaces STCAL
+	public static final String PARAM ="PARAM";		// replaces STPAR
+	public static final String STMT ="STMT";		// replaces STXLN and STST3
+	public static final String LEVEL ="LEVEL";		// replaces STMIF
+	public static final String RETURN ="RETURN";	// replaces STM19
+	public static final String WMC ="WMC";			// replaces STWMC
+	public static final String lcom4 ="lcom4";			// replaces STLCM
+	public static final String CBO ="CBO";			// replaces STCBO
+	public static final String RFC ="RFC";			// replaces STRFC
+	public static final String DIT ="DIT";			// replaces STDIT
+	public static final String NOP ="NOP";			// replaces STNOP
+	public static final String VOCF ="VOCF";		// COMPOUND1
+	public static final String COMF ="COMF";		// COMPOUND2
 
 }

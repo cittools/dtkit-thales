@@ -39,8 +39,8 @@ import javax.xml.bind.Marshaller;
 
 import com.thalesgroup.dtkit.tusar.model.Tusar.Violations;
 import com.thalesgroup.dtkit.tusar.model.Tusar.Violations.File.Violation;
-import com.thalesgroup.dtkit.util.converter.ConversionException;
-import com.thalesgroup.dtkit.util.validator.ValidationException;
+import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
 import com.thalesgroup.tusar.v10.Tusar;
 import com.thalesgroup.tusar.violations.v4.ViolationsComplexType;
 
