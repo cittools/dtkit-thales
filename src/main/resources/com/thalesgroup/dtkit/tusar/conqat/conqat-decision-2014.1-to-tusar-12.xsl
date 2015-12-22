@@ -53,7 +53,7 @@
             <xsl:attribute name="type">FILE</xsl:attribute>
             <xsl:attribute name="value"><xsl:value-of select="substring-after(@id,'/')"/></xsl:attribute> <!-- Substring after because of the project name -->
             <xsl:element name="size:measure">
-                <xsl:attribute name="key">uncovered_conditions</xsl:attribute>
+                <xsl:attribute name="key">conditions_to_cover</xsl:attribute>
                 <xsl:attribute name="value"><xsl:value-of select="xmlnscq:value[@key='decision-coverage-volume']" /></xsl:attribute>
             </xsl:element>
 			<xsl:element name="size:measure">

@@ -40,7 +40,7 @@
                      version="12">
             <xsl:element name="tusar:measures">
                 <xsl:element name="measures:size">
-                    <xsl:attribute name="toolname">ConQATMCC</xsl:attribute>
+                    <xsl:attribute name="toolname">ConQATBranch</xsl:attribute>
                     <xsl:attribute name="version">2014.1</xsl:attribute>
                     <xsl:apply-templates select="//xmlnscq:node[@type='element']"/>
                 </xsl:element>
@@ -54,7 +54,7 @@
             <xsl:attribute name="value"><xsl:value-of select="substring-after(@id,'/')"/></xsl:attribute> <!-- Substring after because of the project name -->
             <xsl:element name="size:measure">
                 <xsl:attribute name="key">conditions_to_cover</xsl:attribute>
-                <xsl:attribute name="value"><xsl:value-of select="xmlnscq:value[@key='multi-condition-coverage-volume']" /></xsl:attribute>
+                <xsl:attribute name="value"><xsl:value-of select="xmlnscq:value[@key='branch-coverage-volume']" /></xsl:attribute>
             </xsl:element>
 			<xsl:element name="size:measure">
                 <xsl:attribute name="key">statements</xsl:attribute>

@@ -24,6 +24,8 @@
 package com.thalesgroup.dtkit.tusar;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlType;
@@ -35,6 +37,8 @@ import com.thalesgroup.dtkit.processor.InputMetric;
 import com.thalesgroup.dtkit.tusar.model.TusarModel;
 import org.jenkinsci.lib.dtkit.util.converter.ConversionException;
 import org.jenkinsci.lib.dtkit.util.validator.ValidationException;
+import org.jenkinsci.lib.dtkit.util.validator.ValidationError;
+import org.jenkinsci.lib.dtkit.util.validator.ErrorType;
 
 @XmlType(name = "LogiscopeAuditC", namespace = "tusar")
 @InputMetric
@@ -62,19 +66,39 @@ public class LogiscopeAuditC extends InputMetricOther{
 
 	@Override
 	public OutputMetric getOutputFormatType() {
-		return TusarModel.OUTPUT_TUSAR_3_0;
+		return TusarModel.OUTPUT_TUSAR_4_0;
 	}
 
 	@Override
 	public void convert(File inputFile, File outFile, Map<String, Object> params)
 	throws ConversionException {
-		LogiscopeCSVParser.cMetricParsing(inputFile, outFile);
+		if (!LogiscopeCSVParser.isCSVFileEmpty(inputFile)){
+			LogiscopeCSVParser.cMetricParsing(inputFile, outFile, params);
+		}
 	}
 
 	@Override
-	public boolean validateInputFile(File inputXMLFile)
+	public boolean validateInputFile(File inputFile)
 	throws ValidationException {
-		return true;
+		boolean isCSVFile = false;
+		List<ValidationError> errors = new ArrayList<ValidationError>();
+		if (LogiscopeCSVParser.isCSVFile(inputFile)){
+			isCSVFile=true;
+		}
+		else {
+			ValidationError error = new ValidationError(ErrorType.ERROR, -1, null, inputFile.getName()+" is not a CSV file. It won't be converted.");
+			errors.add(error);
+		}
+		if (!LogiscopeCSVParser.isCCSVFile(inputFile) && isCSVFile){
+			ValidationError error = new ValidationError(ErrorType.WARNING, -1, null, inputFile.getName()+" is not a correct C logiscope report. It won't be converted.");
+			errors.add(error);
+		}
+		else if (isCSVFile && LogiscopeCSVParser.isCSVFileEmpty(inputFile)){
+			ValidationError error = new ValidationError(ErrorType.WARNING, -1, null, inputFile.getName()+" does not contain any measures. It won't be converted.");
+			errors.add(error);
+		}
+		setInputValidationErrors(errors);
+		return isCSVFile;
 	}
 
 	@Override

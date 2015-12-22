@@ -20,3 +20,4 @@ com.thalesgroup.dtkit.tusar.conqat.ConQATMCDC
 com.thalesgroup.dtkit.tusar.conqat.ConQATMCC
 com.thalesgroup.dtkit.tusar.conqat.ConQATCondition
 com.thalesgroup.dtkit.tusar.conqat.ConQATDecision
+com.thalesgroup.dtkit.tusar.conqat.ConQATBranch

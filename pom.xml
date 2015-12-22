@@ -39,7 +39,7 @@
     <artifactId>dtkit-thales</artifactId>
     <packaging>dtkit-jenkins-hpi</packaging>
     <name>DTKIT Default Thales TUSAR Jenkins</name>
-    <version>1.0.1</version>
+    <version>1.0.4</version>
 
     <licenses>
         <license>
@@ -126,7 +126,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>dtkit</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
         </dependency>
 
         <dependency>
@@ -181,6 +181,7 @@
             <version>${aopalliance.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
